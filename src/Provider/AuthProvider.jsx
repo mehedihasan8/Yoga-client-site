@@ -45,6 +45,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+
   useEffect(() => {
     const unSubcribe = onAuthStateChanged(auth, (loggedUser) => {
       setUser(loggedUser);
@@ -54,6 +55,9 @@ const AuthProvider = ({ children }) => {
       return unSubcribe();
     };
   }, []);
+
+  console.log(user);
+
   const authInfo = {
     user,
     loading,

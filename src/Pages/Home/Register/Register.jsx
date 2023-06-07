@@ -3,32 +3,31 @@ import Social from "../../Sharied/Social/Social";
 import useAuth from "../../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import registerImage from "../../../../public/loginImage.png";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
+import registerImage from "../../../../public/register-img.png";
 import { useState } from "react";
 
 const Register = () => {
   const { createUser, upDateUserProfile } = useAuth();
-  const [error, setError] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data.password, data.confirmPassword);
-
-    if (data.password === data.confirmPassword) {
-      return setError("password and confirm password not matche");
-    }
-
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        reset();
         Swal.fire(
           "Account Create Success!",
           "You clicked the button!",
@@ -69,6 +68,9 @@ const Register = () => {
         Swal.fire(`${error.message}`, "You clicked the button!", "error");
       });
     console.log(errors);
+  };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -126,77 +128,90 @@ const Register = () => {
                   <span className="text-red-600">Email is required</span>
                 )}
               </div>
-              {/* <div className="relative my-4 mb-6">
-                <input
-                  type="password"
-                  name="password"
-                  {...register("password", { required: true })}
-                  {...register("password", { pattern: /^[A-Za-z]+$/i })}
-                  id="floating_outlined3"
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
-                  placeholder=" "
-                />
-                <label
-                  htmlFor="floating_outlined"
-                  className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-                >
-                  Enter Your Password
-                </label>
-              </div> */}
+
               <div className="relative my-4 mb-6">
-                <input
-                  type="password"
-                  {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    maxLength: 20,
-                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
-                  })}
-                  placeholder=" "
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
-                />
+                <div className="relative">
+                  <input
+                    placeholder=" "
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    {...register("password", {
+                      required: true,
+                      minLength: 6,
+                      maxLength: 20,
+                      pattern:
+                        /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                    })}
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
+                  />
+
+                  <button
+                    type="button"
+                    className="absolute top-1/2 right-3 transform -translate-y-1/2"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                  </button>
+                  <label
+                    htmlFor="floating_outlined"
+                    className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                  >
+                    Enter Your Password
+                  </label>
+                </div>
+
                 {errors.password?.type === "required" && (
-                  <p className="text-red-600">Password is required</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    Password is required
+                  </p>
                 )}
                 {errors.password?.type === "minLength" && (
-                  <p className="text-red-600">Password must be 6 characters</p>
-                )}
-                {errors.password?.type === "maxLength" && (
-                  <p className="text-red-600">
-                    Password must be less than 20 characters
+                  <p className="text-red-500 text-sm mt-1">
+                    Password must be 6 characters
                   </p>
                 )}
                 {errors.password?.type === "pattern" && (
-                  <p className="text-red-600 text-center my-2">
+                  <p className="text-red-500 text-sm mt-1">
                     Password must have one Uppercase one lower case, one number
                     and one special character.
                   </p>
                 )}
-                <label
-                  htmlFor="floating_outlined"
-                  className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-                >
-                  Enter Your Password
-                </label>
               </div>
 
-              <div className="relative my-4 mb-5">
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  {...register("confirmPassword", { required: true })}
-                  id="floating_outlined"
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
-                  placeholder=" "
-                />
-                <p className="text-red-600">{error}</p>
-                <label
-                  htmlFor="floating_outlined"
-                  className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-                >
-                  Confirm Your Password
-                </label>
+              <div className="relative my-4 mb-6">
+                <div className="relative">
+                  <input
+                    placeholder=" "
+                    type={showPassword ? "text" : "password"}
+                    id="confirmPassword"
+                    {...register("confirmPassword", {
+                      validate: (value) =>
+                        value === watch("password") || "Passwords do not match",
+                    })}
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
+                  />
+
+                  <button
+                    type="button"
+                    className="absolute top-1/2 right-3 transform -translate-y-1/2"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                  </button>
+                  <label
+                    htmlFor="floating_outlined"
+                    className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+                  >
+                    Confirm Your Password
+                  </label>
+                </div>
+                {errors.confirmPassword && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.confirmPassword.message}
+                  </p>
+                )}
               </div>
+
               <div className="relative my-4 mb-5">
                 <input
                   type="text"
@@ -259,9 +274,9 @@ const Register = () => {
             </Link>
           </div>
         </div>
-        {/* </div> */}
+
         <div className="hidden lg:flex w-[60vw] items-center justify-center bg-indigo-100 flex-1 h-auto">
-          <div className="max-w-lg transform duration-200 hover:scale-110 cursor-pointer h-[500px]">
+          <div className="max-w-lg transform duration-200 hover:scale-110 cursor-pointer text-center h-[500px]">
             <img src={registerImage} alt="" />
           </div>
         </div>

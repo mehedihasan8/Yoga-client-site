@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet";
+import HomeSwiper from "../Swiper/HomeSwiper";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-2">
       <Helmet>
         <title>Sumer | Home</title>
       </Helmet>
-      <h1>Home</h1>
+      <HomeSwiper />
     </div>
   );
 };

@@ -16,6 +16,11 @@ const Social = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire(
+          "Account Create Success!",
+          "You clicked the button!",
+          "success"
+        );
         const saveUser = { name: user.displayName, email: user.email };
 
         fetch("http://localhost:5000/users", {
