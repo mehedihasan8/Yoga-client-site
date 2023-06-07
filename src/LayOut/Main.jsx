@@ -6,7 +6,6 @@ const Main = () => {
     <div>
       <NavBar />
       <Outlet />
-      main
     </div>
   );
 };

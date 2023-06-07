@@ -8,7 +8,7 @@ const NavBar = () => {
   //   const [userClicked, setUserClicked] = useState(false);
   //   const [menuClicked, setMenuClicked] = useState(false);
   //   // const [user] = useAuthState(auth);
-  const user = true;
+  const user = false;
   const activeLinkClasses = "text-gray-800";
   const inactiveLinkClasses = "text-gray-300 hover:text-white";
   //   const handleSignOut = () => {
@@ -254,7 +254,7 @@ const NavBar = () => {
     //   </div>
     // </section>
     <nav className="bg-gray-800 py-4">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className=" px-4">
         <div className="flex justify-between items-center">
           <div className="flex">
             <NavLink
@@ -332,11 +332,11 @@ const NavBar = () => {
                 </>
               ) : (
                 <NavLink
-                  to="/login"
+                  to="/signup"
                   className={inactiveLinkClasses}
                   activeClassName=""
                 >
-                  Login
+                  Signup
                 </NavLink>
               )}
             </div>
