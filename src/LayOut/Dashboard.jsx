@@ -15,7 +15,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   //   const [card] = useCard();
-  const isAdmin = false;
+  const isAdmin = true;
   //   const isAdmin = admin[0];
 
   //   console.log(isAdmin);
@@ -45,13 +45,13 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/deshbord/additem">
+                <NavLink to="/dashbord/addclass">
                   <FaUtensils /> Add Item
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/deshbord/manageitems">
-                  <FaWallet></FaWallet>Manage Items
+                <NavLink to="/dashbord/manageuser">
+                  <FaWallet></FaWallet>Manage User
                 </NavLink>
               </li>
               <li>

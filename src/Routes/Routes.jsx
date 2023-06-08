@@ -6,6 +6,7 @@ import Login from "../Pages/Home/Login/Login";
 import Dashboard from "../LayOut/Dashboard";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 import OurInstractor from "../Pages/OurInstractor/OurInstractor";
+import AddClasses from "../Pages/Dashboard/AddClasses/AddClasses";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "manageuser",
         element: <ManageUser />,
+      },
+      {
+        path: "addclass",
+        element: <AddClasses />,
       },
     ],
   },

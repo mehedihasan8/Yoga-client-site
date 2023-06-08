@@ -46,7 +46,7 @@ const ManageUser = () => {
         <title>Summer | Manae User</title>
       </Helmet>
       <h1 className="text-3xl font-semibold text-center mt-12">
-        All Users : {users.length}
+        All User : {users.length}
       </h1>
       <div className="overflow-x-auto flex flex-col items-center justify-center">
         <table className="table table-zebra">

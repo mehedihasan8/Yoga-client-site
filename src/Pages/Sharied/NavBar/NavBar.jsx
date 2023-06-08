@@ -65,7 +65,7 @@ const NavBar = () => {
               <a>Classes</a>
             </li>
             <li>
-              <Link to="/dashbord/manageuser">Dashbord</Link>
+              <Link to="/dashbord">Dashbord</Link>
             </li>
             {user ? (
               <li>
