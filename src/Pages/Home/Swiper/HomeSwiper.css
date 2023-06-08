@@ -1,4 +1,4 @@
-.bg-1 {
+/* .bg-1 {
   background-image: url("../../../assets/image/bg_1.jpg");
   background: linear-gradient(
       0deg,
@@ -24,4 +24,46 @@
   background-position: center;
   height: 740px;
   background-size: cover;
+} */
+
+.bg-1 {
+  background-image: url("../../../assets/image/bg_1.jpg");
+  background: linear-gradient(
+      0deg,
+      rgba(21, 21, 21, 0.7),
+      rgba(21, 21, 21, 0.5)
+    ),
+    url("../../../assets/image/bg_1.jpg");
+  background-position: center;
+  height: 740px;
+  background-size: cover;
+}
+
+.bg-2 {
+  background-image: url("../../../assets/image/bg_2.jpg");
+  background: linear-gradient(
+      0deg,
+      rgba(21, 21, 21, 0.7),
+      rgba(21, 21, 21, 0.5)
+    ),
+    url("../../../assets/image/bg_2.jpg");
+  background-position: center;
+  height: 740px;
+  background-size: cover;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+  .bg-1,
+  .bg-2 {
+    height: 400px; /* Adjust the height as per your needs */
+  }
+}
+
+/* Media queries for tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bg-1,
+  .bg-2 {
+    height: 600px; /* Adjust the height as per your needs */
+  }
 }
