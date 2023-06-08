@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import HomeSwiper from "../Swiper/HomeSwiper";
+import PopularSection from "../PopularSection/PopularSection";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
         <title>Sumer | Home</title>
       </Helmet>
       <HomeSwiper />
+      <PopularSection />
     </div>
   );
 };

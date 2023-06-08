@@ -1,0 +1,32 @@
+[
+  {
+    "instructorName": "John Smith",
+    "email": "john.smith@example.com",
+    "image": ""
+  },
+  {
+    "instructorName": "Emma Johnson",
+    "email": "emma.johnson@example.com",
+    "image": "https://example.com/emma_johnson.jpg"
+  },
+  {
+    "instructorName": "Michael Davis",
+    "email": "michael.davis@example.com",
+    "image": "https://example.com/michael_davis.jpg"
+  },
+  {
+    "instructorName": "Sarah Thompson",
+    "email": "sarah.thompson@example.com",
+    "image": "https://example.com/sarah_thompson.jpg"
+  },
+  {
+    "instructorName": "David Wilson",
+    "email": "david.wilson@example.com",
+    "image": "https://example.com/david_wilson.jpg"
+  },
+  {
+    "instructorName": "Jessica Lee",
+    "email": "jessica.lee@example.com",
+    "image": "https://example.com/jessica_lee.jpg"
+  }
+]
