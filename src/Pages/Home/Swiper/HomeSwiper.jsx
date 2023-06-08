@@ -9,7 +9,7 @@ import "./HomeSwiper.css";
 
 const HomeSwiper = () => {
   return (
-    <div className="h-[600px]">
+    <div className="h-[460px] lg:h-[650px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

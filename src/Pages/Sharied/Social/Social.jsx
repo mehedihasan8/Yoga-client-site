@@ -7,9 +7,7 @@ const Social = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  //   if (loading) {
-  //     return <Loading />;
-  //   }
+
   const signInWithGoogle = () => {
     console.log("click");
     signInGoogle()

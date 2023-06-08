@@ -1,32 +1,32 @@
 [
   {
     "instructorName": "John Smith",
-    "email": "john.smith@example.com",
+    "email": "john.smith@gmail.com",
     "image": "https://i.ibb.co/RHGNWk4/trainer-1.jpg"
   },
   {
     "instructorName": "Emma Johnson",
-    "email": "emma.johnson@example.com",
+    "email": "emma.johnson@gmail.com",
     "image": "https://i.ibb.co/S6PtPTf/trainer-2.jpg"
   },
   {
     "instructorName": "Michael Davis",
-    "email": "michael.davis@example.com",
+    "email": "michael.davis@gmail.com",
     "image": "https://i.ibb.co/cFcBZJY/trainer-3.jpg"
   },
   {
     "instructorName": "Sarah Thompson",
-    "email": "sarah.thompson@example.com",
+    "email": "sarah.thompson@gmail.com",
     "image": "https://i.ibb.co/2n56RbN/trainer-4.jpg"
   },
   {
     "instructorName": "David Wilson",
-    "email": "david.wilson@example.com",
+    "email": "david.wilson@gmail.com",
     "image": "https://i.ibb.co/sKCYgnV/Whats-App-Image-2023-06-08-at-8-41-39-AM.jpg"
   },
   {
     "instructorName": "Jessica Lee",
-    "email": "jessica.lee@example.com",
+    "email": "jessica.lee@gmail.com",
     "image": "https://i.ibb.co/b68Swyn/Whats-App-Image-2023-06-08-at-8-41-39-AM-1.jpg"
   }
 ]

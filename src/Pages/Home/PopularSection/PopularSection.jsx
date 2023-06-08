@@ -5,7 +5,7 @@ const PopularSection = () => {
   const isAdmin = () => {};
 
   return (
-    <div className="my-20">
+    <div className="mb-20">
       <div>
         <h2 className="text-4xl font-bold text-center">Populer Classes</h2>
       </div>
