@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import HomeSwiper from "../Swiper/HomeSwiper";
 import PopularSection from "../PopularSection/PopularSection";
+import Experience from "../Experience/Experience";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       </Helmet>
       <HomeSwiper />
       <PopularSection />
+      <Experience />
     </div>
   );
 };

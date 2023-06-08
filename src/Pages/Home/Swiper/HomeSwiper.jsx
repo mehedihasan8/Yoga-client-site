@@ -27,7 +27,7 @@ const HomeSwiper = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="bg-1 flex items-center justify-center text-center text-white border border-red-400">
+          <div className="bg-1 h-[600px] flex items-center justify-center text-center text-white border border-red-400">
             <div>
               <h4 className=" text-3xl lg:text-5xl px-4 font-extrabold ">
                 Lighting Your Heart & Mind
@@ -41,7 +41,7 @@ const HomeSwiper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-2 flex items-center justify-center text-center text-white border border-red-400">
+          <div className="bg-2 h-[600px] flex items-center justify-center text-center text-white border border-red-400">
             <div>
               <h4 className=" text-3xl lg:text-5xl px-4 font-extrabold ">
                 Lighting Your Heart & Mind
@@ -55,7 +55,7 @@ const HomeSwiper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-1 flex items-center justify-center text-center text-white border border-red-400">
+          <div className="bg-1 h-[600px] flex items-center justify-center text-center text-white border border-red-400">
             <div>
               <h4 className=" text-3xl lg:text-5xl px-4 font-extrabold ">
                 Lighting Your Heart & Mind

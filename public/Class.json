@@ -1,43 +1,43 @@
 [
   {
-    "yogaName": "Hatha Yoga",
+    "yogaName": "Private & Group Lessons",
     "instructorName": "John Smith",
-    "image": "https://i.ibb.co/RHGNWk4/trainer-1.jpg",
+    "image": "https://i.ibb.co/KjH7s1m/classes-1.jpg",
     "availableSeats": 5,
     "price": "$30"
   },
   {
-    "yogaName": "Vinyasa Yoga",
+    "yogaName": "Yoga for Pregnant",
     "instructorName": "Emma Johnson",
-    "image": "https://i.ibb.co/S6PtPTf/trainer-2.jpg",
+    "image": "https://i.ibb.co/ZmHQZd2/classes-2.jpg",
     "availableSeats": 18,
     "price": "$35"
   },
   {
-    "yogaName": "Ashtanga Yoga",
+    "yogaName": "Yoga for Beginners",
     "instructorName": "Michael Davis",
-    "image": "https://i.ibb.co/cFcBZJY/trainer-3.jpg",
+    "image": "https://i.ibb.co/dm2r5hk/classes-3.jpg",
     "availableSeats": 15,
     "price": "$25"
   },
   {
-    "yogaName": "Bikram Yoga",
+    "yogaName": "Yoga Barre",
     "instructorName": "Sarah Thompson",
-    "image": "https://i.ibb.co/2n56RbN/trainer-4.jpg",
+    "image": "https://i.ibb.co/7zbJkGG/classes-4.jpg",
     "availableSeats": 12,
     "price": "$40"
   },
   {
-    "yogaName": "Kundalini Yoga",
+    "yogaName": "Yoga Core",
     "instructorName": "David Wilson",
-    "image": "https://i.ibb.co/sKCYgnV/Whats-App-Image-2023-06-08-at-8-41-39-AM.jpg",
+    "image": "https://i.ibb.co/tQvPM5K/classes-5.jpg",
     "availableSeats": 0,
     "price": "$50"
   },
   {
-    "yogaName": "Yin Yoga",
+    "yogaName": "Yoga Restore",
     "instructorName": "Jessica Lee",
-    "image": "https://i.ibb.co/b68Swyn/Whats-App-Image-2023-06-08-at-8-41-39-AM-1.jpg",
+    "image": "https://i.ibb.co/hyTspZX/classes-6.jpg",
     "availableSeats": 8,
     "price": "$20"
   }
