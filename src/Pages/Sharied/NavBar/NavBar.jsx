@@ -62,8 +62,9 @@ const NavBar = () => {
               <Link to="/instractor">Instructors</Link>
             </li>
             <li>
-              <a>Classes</a>
+              <Link to="/classes">Classes</Link>
             </li>
+
             <li>
               <Link to="/dashbord">Dashbord</Link>
             </li>

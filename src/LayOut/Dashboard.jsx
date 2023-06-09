@@ -1,21 +1,20 @@
+import { FaClinicMedical, FaGraduationCap, FaHome } from "react-icons/fa";
+import { AiOutlinePlusCircle, AiOutlineUsergroupAdd } from "react-icons/ai";
 import {
-  FaBars,
-  FaBook,
-  FaCalendarAlt,
-  FaClinicMedical,
-  FaFirstOrder,
-  FaHome,
-  FaShoppingCart,
-  FaUsers,
-  FaUtensils,
-  FaWallet,
-} from "react-icons/fa";
-
-import { NavLink, Outlet } from "react-router-dom";
+  RiBook2Line,
+  RiCalendar2Line,
+  RiCheckDoubleLine,
+  RiCheckboxMultipleLine,
+  RiUserSettingsLine,
+} from "react-icons/ri";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 const Dashboard = () => {
   //   const [card] = useCard();
-  const isAdmin = true;
+  const isAdmin = false;
+  const inInstractor = true;
+  const { user } = useAuth();
   //   const isAdmin = admin[0];
 
   //   console.log(isAdmin);
@@ -36,60 +35,69 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side bg-[#3173de]">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+
         <ul className="menu p-4 w-80">
-          {isAdmin ? (
+          {isAdmin && user && !inInstractor && (
             <>
               <li>
-                <NavLink to="/dashboard/home">
+                <Link to="/dashbord">
                   <FaClinicMedical /> Admin Home
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink to="/dashbord/addclass">
-                  <FaUtensils /> Add Item
+                <NavLink to="/dashbord/">
+                  <RiCalendar2Line /> Manage Classes
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashbord/manageuser">
-                  <FaWallet></FaWallet>Manage User
+                  <RiUserSettingsLine />
+                  Manage Users
                 </NavLink>
               </li>
+            </>
+          )}
+
+          {inInstractor && user && !isAdmin && (
+            <>
               <li>
-                <NavLink to="/dashboard/history">
-                  <FaBook />
-                  Manage bookings
+                <Link to="/dashbord">
+                  <FaClinicMedical />
+                  Instractor Home
+                </Link>
+              </li>
+              <li>
+                <NavLink to="/dashbord/addclass">
+                  <AiOutlinePlusCircle />
+                  Add a Class
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/deshbord/allusers">
-                  <FaUsers />
-                  All Users
+                  <RiBook2Line />
+                  My Classes
                 </NavLink>
               </li>
             </>
-          ) : (
+          )}
+
+          {user && !isAdmin && !inInstractor && (
             <>
               <li>
-                <NavLink to="/dashboard/home">
-                  <FaHome></FaHome> User Home
+                <Link to="/dashbord">
+                  <FaClinicMedical /> User Home
+                </Link>
+              </li>
+              <li>
+                <NavLink to="/deshbord/allusers">
+                  <RiCheckboxMultipleLine />
+                  My Selected Classes
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/reservations">
-                  <FaCalendarAlt></FaCalendarAlt> Reservations
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/deshbord/payment">
-                  <FaWallet></FaWallet> Payment
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/deshbord/mycard">
-                  <FaShoppingCart></FaShoppingCart> My Cart
-                  <span className="badge inl badge-secondary">
-                    {/* +{card?.length || 0} */}
-                  </span>
+                <NavLink to="/deshbord/allusers">
+                  <RiCheckDoubleLine />
+                  My Enrolled Classes
                 </NavLink>
               </li>
             </>
@@ -102,14 +110,15 @@ const Dashboard = () => {
             </NavLink>{" "}
           </li>
           <li>
-            <NavLink to="/menu">
+            <NavLink to="/instractor">
               {" "}
-              <FaBars /> Our Menu
+              <FaGraduationCap /> instractor
             </NavLink>
           </li>
           <li>
-            <NavLink to="/order/salad">
-              <FaFirstOrder /> Order Food
+            <NavLink to="/classes">
+              {" "}
+              <AiOutlineUsergroupAdd /> Class
             </NavLink>
           </li>
         </ul>

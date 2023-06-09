@@ -1,8 +1,7 @@
-import React from "react";
-import PopularInistractorCard from "./PopularInistractorCard";
-import useInstractor from "../../../Hooks/useInstractor";
+import InstractorCard from "./InstractorCard";
+import useInstractor from "../../Hooks/useInstractor";
 
-const PopularInstractor = () => {
+const Instractor = () => {
   const [instractors] = useInstractor();
   return (
     <div>
@@ -11,13 +10,14 @@ const PopularInstractor = () => {
       </h1>
       <div className="w-[95%] mx-auto mt-10 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
         {instractors.map((instructor) => (
-          <PopularInistractorCard
+          <InstractorCard
+            key={instructor._id}
             instructor={instructor}
-          ></PopularInistractorCard>
+          ></InstractorCard>
         ))}
       </div>
     </div>
   );
 };
 
-export default PopularInstractor;
+export default Instractor;

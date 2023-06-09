@@ -5,8 +5,9 @@ import Register from "../Pages/Home/Register/Register";
 import Login from "../Pages/Home/Login/Login";
 import Dashboard from "../LayOut/Dashboard";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
-import OurInstractor from "../Pages/OurInstractor/OurInstractor";
 import AddClasses from "../Pages/Dashboard/AddClasses/AddClasses";
+import Classess from "../Pages/Classes/Classess";
+import Instractor from "../Pages/Instractor/Instractor";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/instractor",
-        element: <OurInstractor />,
+        element: <Instractor />,
+      },
+      {
+        path: "/classes",
+        element: <Classess />,
       },
     ],
   },

@@ -32,20 +32,21 @@ const AddClasses = () => {
         if (img.success) {
           const imgURL = img.data.display_url;
           const { name, price, ClassName, seats, email } = data;
-          const newItem = {
-            name,
+          const addClasses = {
+            instructorName: name,
             price,
-            ClassName,
-            seats,
+            yogaName: ClassName,
+            availableSeats: seats,
             email,
             image: imgURL,
           };
-          console.log(newItem);
-          axiosSecure.post("/menu", newItem).then((res) => {
+          addClasses.status = "panding";
+          console.log(addClasses);
+          axiosSecure.post("/addclass", addClasses).then((res) => {
             if (res.data.insertedId) {
               reset();
               Swal.fire(
-                "Product Add Successfuly!",
+                "Class Add Successfuly!",
                 "You clicked the button!",
                 "success"
               );

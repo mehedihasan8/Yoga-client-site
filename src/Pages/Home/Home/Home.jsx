@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import HomeSwiper from "../Swiper/HomeSwiper";
 import PopularSection from "../PopularSection/PopularSection";
 import Experience from "../Experience/Experience";
-import PopularInstractor from "../PopularInstractor/PopularInstractor";
+import Instractor from "../../Instractor/Instractor";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       <HomeSwiper />
       <PopularSection />
       <Experience />
-      <PopularInstractor />
+      <Instractor />
     </div>
   );
 };

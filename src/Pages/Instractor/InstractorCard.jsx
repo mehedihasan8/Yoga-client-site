@@ -1,6 +1,4 @@
-import React from "react";
-
-const PopularInistractorCard = ({ instructor }) => {
+const InstractorCard = ({ instructor }) => {
   const { instructorName, email, image } = instructor;
   return (
     <div className="text-center mb-4">
@@ -17,4 +15,4 @@ const PopularInistractorCard = ({ instructor }) => {
   );
 };
 
-export default PopularInistractorCard;
+export default InstractorCard;
