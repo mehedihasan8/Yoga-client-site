@@ -40,7 +40,7 @@ const AddClasses = () => {
             email,
             image: imgURL,
           };
-          addClasses.status = "panding";
+          addClasses.status = "pending";
           console.log(addClasses);
           axiosSecure.post("/addclass", addClasses).then((res) => {
             if (res.data.insertedId) {
@@ -144,7 +144,7 @@ const AddClasses = () => {
             </div>
 
             <input
-              className="btn btn-primary my-6"
+              className="btn btn-primary bg-[#3173DE] my-6"
               type="submit"
               value="Add items "
             />

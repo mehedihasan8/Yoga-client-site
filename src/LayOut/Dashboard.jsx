@@ -20,7 +20,7 @@ const Dashboard = () => {
   //   console.log(isAdmin);
 
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open  ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center">
         <div className="w-full">
@@ -33,7 +33,7 @@ const Dashboard = () => {
           Open drawer
         </label>
       </div>
-      <div className="drawer-side bg-[#3173de]">
+      <div className="drawer-side bg-[#3173de] text-white">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
         <ul className="menu p-4 w-80">
@@ -73,7 +73,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/deshbord/allusers">
+                <NavLink to="/dashbord/myclass">
                   <RiBook2Line />
                   My Classes
                 </NavLink>

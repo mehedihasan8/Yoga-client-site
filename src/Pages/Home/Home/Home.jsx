@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import HomeSwiper from "../Swiper/HomeSwiper";
-import PopularSection from "../PopularSection/PopularSection";
 import Experience from "../Experience/Experience";
 import Instractor from "../../Instractor/Instractor";
 
@@ -11,7 +10,7 @@ const Home = () => {
         <title>Sumer | Home</title>
       </Helmet>
       <HomeSwiper />
-      <PopularSection />
+      {/* <PopularSection /> */}
       <Experience />
       <Instractor />
     </div>
