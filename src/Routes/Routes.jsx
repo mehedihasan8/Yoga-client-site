@@ -9,11 +9,13 @@ import AddClasses from "../Pages/Dashboard/AddClasses/AddClasses";
 import Classess from "../Pages/Classes/Classess";
 import Instractor from "../Pages/Instractor/Instractor";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import Error from "../Pages/Sharied/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -40,6 +42,7 @@ const router = createBrowserRouter([
   {
     path: "/dashbord",
     element: <Dashboard />,
+    errorElement: <Error />,
     children: [
       {
         path: "manageuser",

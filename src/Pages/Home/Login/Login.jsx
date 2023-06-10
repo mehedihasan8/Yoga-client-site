@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import loginImage from "../../../../public/loginImage.png";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { signeInUser } = useAuth();
@@ -17,15 +18,39 @@ const Login = () => {
 
   // console.log(from);
   // state={{ from: loaction }}
-  const handelLogin = (event) => {
-    event.preventDefault();
+  // const handelLogin = (event) => {
+  //   event.preventDefault();
 
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
+  //   const form = event.target;
+  //   const email = form.email.value;
+  //   const password = form.password.value;
 
-    // console.log(email, password);
-    signeInUser(email, password)
+  //   // console.log(email, password);
+  //   signeInUser(email, password)
+  //     .then((result) => {
+  //       const user = result.user;
+  //       console.log(user);
+
+  //       // console.log(user);
+  //       Swal.fire("Good job Login!", "You clicked the button!", "success");
+
+  //       navigate(from, { replace: true });
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //       Swal.fire({
+  //         title: `${error.message}`,
+  //         text: "Do you want to continue",
+  //         icon: "error",
+  //         confirmButtonText: "Ok",
+  //       });
+  //     });
+  // };
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data.email, data.password);
+    signeInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
         console.log(user);
@@ -71,11 +96,12 @@ const Login = () => {
           <div className="mt-10">
             {/* <-------------------------> form <---------------------->*/}
 
-            <form onSubmit={handelLogin}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="relative my-4">
                 <input
                   type="email"
                   name="email"
+                  {...register("email", { required: true })}
                   id="floating_outlined"
                   className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
                   placeholder=" "
@@ -93,6 +119,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
+                  {...register("password", { required: true })}
                   id="floating_outlined1"
                   className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
                   placeholder=" "
@@ -112,23 +139,7 @@ const Login = () => {
                 </label>
               </div>
 
-              {/* <div className="relative my-4 mb-6">
-                <input
-                  type="password"
-                  name="password"
-                  id="floating_outlined1"
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border"
-                  placeholder=" "
-                />
-                <label
-                  htmlFor="floating_outlined1"
-                  className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
-                >
-                  Enter Your Password
-                </label>
-              </div> */}
-
-              <p className="text-center text-red-500">{error}</p>
+              <p className="text-center text-red-500 mb-4">{error}</p>
 
               <div className="flex w-full">
                 <button

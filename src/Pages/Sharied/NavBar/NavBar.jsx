@@ -1,7 +1,26 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
+  const [theme, seTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  const handelToggol = (e) => {
+    console.log("cliked from togol");
+    if (e.target.checked) {
+      seTheme("dark");
+    } else {
+      seTheme("light");
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
   const { user, logOut } = useAuth();
   console.log(user);
 
@@ -21,7 +40,11 @@ const NavBar = () => {
         <div className="dropdown dropdown-end mr-3">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={handelToggol}
+              checked={theme === "light" ? false : true}
+            />
 
             {/* sun icon */}
             <svg
