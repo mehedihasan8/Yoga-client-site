@@ -30,36 +30,31 @@ const MySelectedClasses = () => {
             </tr>
           </thead>
           <tbody>
-            {selectedClass.map((user, i) => (
-              <tr key={user._id}>
+            {selectedClass.map((selected, i) => (
+              <tr key={selected._id}>
                 <td>{i + 1}</td>
                 <td className="border p-1">
                   <img
-                    src={user.image}
-                    alt={user.instructorName}
+                    src={selected.image}
+                    alt={selected.instructorName}
                     className=" w-[10rem] rounded-md mb-4"
                   />
                 </td>
-                <td>{user.instructorName}</td>
-                <td>{user.email}</td>
-                <td>{user.price}</td>
+                <td>{selected.instructorName}</td>
+                <td>{selected.email}</td>
+                <td>{selected.price}</td>
 
                 <td>
-                  <button onClick={() => handelDeleteUser(user)}>
+                  <button onClick={() => handelDeleteUser(selected)}>
                     {" "}
                     <FaTrashAlt />
                   </button>
                 </td>
                 <td>
-                  <Link to={`/dashbord/payment`} state={user.price}>
+                  <Link to={`/dashbord/payment`} state={selected}>
                     <button>Payment</button>
                   </Link>
                 </td>
-                {/* <td>
-                  <Link to="/dashbord/payment">
-                    <button>Paymetn</button>
-                  </Link>
-                </td> */}
               </tr>
             ))}
           </tbody>

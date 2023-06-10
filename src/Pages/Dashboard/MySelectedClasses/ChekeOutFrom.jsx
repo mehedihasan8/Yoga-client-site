@@ -2,46 +2,25 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
-const ChekeOutFrom = ({ price }) => {
+const ChekeOutFrom = ({ selected }) => {
+  const { price, image, instructorName, yogaName, _id } = selected;
+  console.log(price);
   const [errors, setErrors] = useState("");
+  const [success, setSuccess] = useState("");
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useAuth();
   const [clientSecret, setClientSecret] = useState("");
   const [axiosSecure] = useAxiosSecure();
-  console.log("client ", clientSecret);
-
-  //   useEffect(() => {
-  //     axiosSecure.post("/create-payment-intent", { price }).then((res) => {
-  //       console.log(res.data.clientSecret);
-  //       setClientSecret(res.data.clientSecret);
-  //     });
-  //   }, []);
-
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         if (price > 0) {
-  //           const response = await axiosSecure.post("/create-payment-intent", {
-  //             price,
-  //           });
-  //           const { clientSecret } = response.data;
-  //           console.log(clientSecret);
-  //           setClientSecret(clientSecret);
-  //         }
-  //       } catch (error) {
-  //         console.error("Error fetching client secret:", error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, []);
+  const [processing, setProcessing] = useState(false);
+  const [transitionId, setTransitionId] = useState("");
 
   useEffect(() => {
     if (price > 0) {
       axiosSecure.post("/create-payment-intent", { price }).then((res) => {
-        console.log(res.data.clientSecret);
+        // console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
       });
     }
@@ -59,7 +38,6 @@ const ChekeOutFrom = ({ price }) => {
     if (card == null) {
       return;
     }
-    // console.log("insart the card", card);
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
@@ -72,7 +50,7 @@ const ChekeOutFrom = ({ price }) => {
       setErrors("");
       console.log("[PaymentMethod]", paymentMethod);
     }
-
+    setProcessing(true);
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -86,7 +64,28 @@ const ChekeOutFrom = ({ price }) => {
     if (confirmError) {
       console.log(confirmError);
     }
-    console.log(paymentIntent);
+
+    setProcessing(false);
+
+    if (paymentIntent.status === "succeeded") {
+      setTransitionId(paymentIntent.id);
+      setSuccess(`Your Payment Success your id ${paymentIntent.id}`);
+      Swal.fire("Good payment complite!", "You clicked the button!", "success");
+      const history = {
+        image,
+        instructorName,
+        yogaName,
+        _id,
+        email: user?.email,
+      };
+      axiosSecure.post("/payment", history).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          console.log("complite");
+        }
+      });
+      console.log(paymentIntent);
+    }
   };
   return (
     <form className="w-2/4 mx-auto" onSubmit={handleSubmit}>
@@ -107,11 +106,12 @@ const ChekeOutFrom = ({ price }) => {
         }}
       />
       <p className="text-red-500 text-center ">{errors}</p>
+      <p className="text-green-600 text-center ">{success}</p>
       <div className="text-center mt-4">
         <button
           className="btn btn-info"
           type="submit"
-          disabled={!stripe || !clientSecret}
+          disabled={!stripe || !clientSecret || processing}
         >
           Pay
         </button>

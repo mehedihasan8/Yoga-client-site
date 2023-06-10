@@ -13,14 +13,14 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const location = useLocation();
 
-  const price = location.state;
-  console.log(price);
+  const selected = location.state;
+  console.log(selected);
 
   return (
     <div>
       <h1 className="text-4xl font-bold text-center lg:my-10">payment here</h1>
       <Elements stripe={stripePromise}>
-        <ChekeOutFrom price={price} />
+        <ChekeOutFrom selected={selected} />
       </Elements>
     </div>
   );
