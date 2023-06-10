@@ -10,6 +10,9 @@ import Classess from "../Pages/Classes/Classess";
 import Instractor from "../Pages/Instractor/Instractor";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import Error from "../Pages/Sharied/Error/Error";
+import ManaeClasses from "../Pages/Dashboard/MangeClasses/ManaeClasses";
+import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
+import Payment from "../Pages/Dashboard/MySelectedClasses/Payment";
 
 const router = createBrowserRouter([
   {
@@ -42,11 +45,15 @@ const router = createBrowserRouter([
   {
     path: "/dashbord",
     element: <Dashboard />,
-    errorElement: <Error />,
+    // errorElement: <Error />,
     children: [
       {
         path: "manageuser",
         element: <ManageUser />,
+      },
+      {
+        path: "manageclasses",
+        element: <ManaeClasses />,
       },
       {
         path: "addclass",
@@ -55,6 +62,14 @@ const router = createBrowserRouter([
       {
         path: "myclass",
         element: <MyClasses />,
+      },
+      {
+        path: "MySelectedClasses",
+        element: <MySelectedClasses />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
     ],
   },

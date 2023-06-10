@@ -13,6 +13,7 @@ const ClassessCard = ({ yoga }) => {
   //   const isSelectable = isSeatsAvailable && isLoggedIn && !isAdmin;
 
   const { user } = useAuth();
+  console.log(user);
   const navigate = useNavigate();
   const isAdmin = false;
   const isInstructor = false;

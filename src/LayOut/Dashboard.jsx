@@ -13,7 +13,7 @@ import useAuth from "../Hooks/useAuth";
 const Dashboard = () => {
   //   const [card] = useCard();
   const isAdmin = false;
-  const inInstractor = true;
+  const inInstractor = false;
   const { user } = useAuth();
   //   const isAdmin = admin[0];
 
@@ -45,7 +45,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <NavLink to="/dashbord/">
+                <NavLink to="/dashbord/manageclasses">
                   <RiCalendar2Line /> Manage Classes
                 </NavLink>
               </li>
@@ -89,7 +89,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <NavLink to="/deshbord/allusers">
+                <NavLink to="/dashbord/MySelectedClasses">
                   <RiCheckboxMultipleLine />
                   My Selected Classes
                 </NavLink>
