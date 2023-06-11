@@ -1,7 +1,6 @@
-import React from "react";
 import useMySelectedClass from "../../../Hooks/useMySelectedClass";
 import { Helmet } from "react-helmet";
-import { FaEdit, FaReact, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
@@ -25,7 +24,7 @@ const MySelectedClasses = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/selectedClass/${selected._id}`).then((res) => {
-          const deletedd = res.data;
+          // const deletedd = res.data;
           // console.log(deletedd);
           if (res.data.deletedCount > 0) {
             Swal.fire("Deleted!", "Your file has been deleted.", "success");

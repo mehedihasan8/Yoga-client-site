@@ -10,15 +10,17 @@ import {
 import { MdHistory } from "react-icons/md";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import useAdmin from "../Hooks/useAdmin";
+import useInstrucor from "../Hooks/useInstrucor";
 
 const Dashboard = () => {
-  //   const [card] = useCard();
-  const isAdmin = false;
-  const inInstractor = false;
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstrucor();
   const { user } = useAuth();
-  //   const isAdmin = admin[0];
+  console.log(user);
+  // const isAdmin = admin[0];
 
-  //   console.log(isAdmin);
+  console.log(isAdmin);
 
   return (
     <div className="drawer lg:drawer-open  ">
@@ -38,7 +40,7 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
         <ul className="menu p-4 w-80">
-          {isAdmin && user && !inInstractor && (
+          {isAdmin && user && !isInstructor && (
             <>
               <li>
                 <Link to="/dashbord">
@@ -59,7 +61,7 @@ const Dashboard = () => {
             </>
           )}
 
-          {inInstractor && user && !isAdmin && (
+          {isInstructor && user && !isAdmin && (
             <>
               <li>
                 <Link to="/dashbord">
@@ -82,11 +84,11 @@ const Dashboard = () => {
             </>
           )}
 
-          {user && !isAdmin && !inInstractor && (
+          {user && !isAdmin && !isInstructor && (
             <>
               <li>
                 <Link to="/dashbord">
-                  <FaClinicMedical /> User Home
+                  <FaClinicMedical /> {user?.displayName} Your Home
                 </Link>
               </li>
               <li>

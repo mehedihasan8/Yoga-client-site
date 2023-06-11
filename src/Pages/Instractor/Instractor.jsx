@@ -1,8 +1,8 @@
 import InstractorCard from "./InstractorCard";
-import useInstractor from "../../Hooks/useInstractor";
 
+import instractors from "../../../public/instactor.json";
 const Instractor = () => {
-  const [instractors] = useInstractor();
+  // const [instractors] = useInstractor();
   return (
     <div>
       <h1 className="text-4xl font-bold text-center lg:mb-20">

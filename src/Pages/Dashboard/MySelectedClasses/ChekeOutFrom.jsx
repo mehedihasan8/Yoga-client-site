@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
@@ -91,7 +91,7 @@ const ChekeOutFrom = ({ selected }) => {
         setTransitionId(paymentIntent.id);
         if (res.data.insertedId) {
           axiosSecure.delete(`/selectedClass/${_id}`).then((res) => {
-            const deletedd = res.data;
+            // const deletedd = res.data;
             // console.log(deletedd);
             if (res.data.deletedCount > 0) {
               Swal.fire(
