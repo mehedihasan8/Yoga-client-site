@@ -36,7 +36,11 @@ const Register = () => {
 
         upDateUserProfile(data.name, data.photourl)
           .then(() => {
-            const saveUser = { name: data.name, email: data.email };
+            const saveUser = {
+              name: data.name,
+              email: data.email,
+              role: "student",
+            };
 
             fetch("http://localhost:5000/users", {
               method: "POST",

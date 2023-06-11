@@ -10,7 +10,7 @@ const PaymentHistory = () => {
     fetch(`http://localhost:5000/payment/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        setEntrolClasses(data);
+        if (!data.error) setEntrolClasses(data);
       });
   }, []);
 

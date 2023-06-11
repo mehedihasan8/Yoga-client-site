@@ -16,36 +16,6 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // console.log(from);
-  // state={{ from: loaction }}
-  // const handelLogin = (event) => {
-  //   event.preventDefault();
-
-  //   const form = event.target;
-  //   const email = form.email.value;
-  //   const password = form.password.value;
-
-  //   // console.log(email, password);
-  //   signeInUser(email, password)
-  //     .then((result) => {
-  //       const user = result.user;
-  //       console.log(user);
-
-  //       // console.log(user);
-  //       Swal.fire("Good job Login!", "You clicked the button!", "success");
-
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       setError(error.message);
-  //       Swal.fire({
-  //         title: `${error.message}`,
-  //         text: "Do you want to continue",
-  //         icon: "error",
-  //         confirmButtonText: "Ok",
-  //       });
-  //     });
-  // };
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {

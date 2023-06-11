@@ -64,12 +64,13 @@ const MyClasses = () => {
             <thead>
               <tr>
                 <th className="px-1 py-4 border bg-slate-100">Image</th>
-                <th className="px-4 py-4 border bg-slate-100">Sport Name</th>
+                <th className="px-4 py-4 border bg-slate-100">Yoga Name</th>
                 <th className="px-4 py-4 border bg-slate-100">Instructor</th>
                 <th className="px-4 py-4 border bg-slate-100">
                   Available Seats
                 </th>
                 <th className="px-4 py-4 border bg-slate-100">Price</th>
+                <th className="px-4 py-4 border bg-slate-100">Enroll</th>
                 <th className="px-4 py-4 border bg-slate-100">Status</th>
               </tr>
             </thead>
@@ -85,7 +86,7 @@ const MyClasses = () => {
                       />
                     </div>
                   </td>
-                  <td className="px-4 py-5 border">{classItem.sportName}</td>
+                  <td className="px-4 py-5 border">{classItem.yogaName}</td>
                   <td className="px-4 py-5 border">
                     {classItem.instructorName}
                   </td>
@@ -93,6 +94,9 @@ const MyClasses = () => {
                     {classItem.availableSeats}
                   </td>
                   <td className="px-4 py-5 border">{classItem.price}</td>
+                  <td className="px-4 py-5 border">
+                    {classItem.totalEnrolled ? classItem.totalEnrolled : "0"}
+                  </td>
                   <td className="px-4 pt-3 pb-2 border">
                     {classItem.status === "pending" && (
                       <span className="badge badge-ghost">Pending</span>

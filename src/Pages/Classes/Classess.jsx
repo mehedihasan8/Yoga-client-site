@@ -1,22 +1,19 @@
 import useClesses from "../../Hooks/useClesses";
 import ClassessCard from "./ClassessCard";
 const Classess = () => {
-  const isLoggedIn = () => {};
-  const isAdmin = () => {};
-  const [clesses] = useClesses();
+  const [clesses, loading] = useClesses();
+  const approvedYoug = clesses.filter((cles) => cles.status === "approved");
+  if (loading) {
+    return <span className="loading loading-dots loading-lg"></span>;
+  }
   return (
-    <div className="mb-20">
+    <div className="mb-20 mt-10">
       <div>
         <h2 className="text-4xl font-bold text-center">Populer Classes</h2>
       </div>
       <div className="w-[95%] mx-auto mt-10 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {clesses.map((yoga, index) => (
-          <ClassessCard
-            key={index}
-            yoga={yoga}
-            isLoggedIn={isLoggedIn}
-            isAdmin={isAdmin}
-          ></ClassessCard>
+        {approvedYoug.map((yoga, index) => (
+          <ClassessCard key={index} yoga={yoga}></ClassessCard>
         ))}
       </div>
     </div>

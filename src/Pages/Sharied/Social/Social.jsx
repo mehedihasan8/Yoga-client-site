@@ -19,7 +19,11 @@ const Social = () => {
           "You clicked the button!",
           "success"
         );
-        const saveUser = { name: user.displayName, email: user.email };
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "student",
+        };
 
         fetch("http://localhost:5000/users", {
           method: "POST",

@@ -8,7 +8,7 @@ const MyEnrolMentClasses = () => {
     fetch(`http://localhost:5000/payment/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        setEntrolClasses(data);
+        if (!data.error) setEntrolClasses(data);
       });
   }, []);
 
@@ -36,7 +36,7 @@ const MyEnrolMentClasses = () => {
               </tr>
             </thead>
             <tbody className="mt-4">
-              {entrolClasses.map((classItem) => (
+              {entrolClasses?.map((classItem) => (
                 <tr key={classItem._id} className="text-center">
                   <td className="py-1 border">
                     <div className="w-[80%] rounded-md mx-auto">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
+import logo from "../../../assets/image/WhatsApp Image 2023-06-11 at 7.01.36 PM.jpeg";
 
 const NavBar = () => {
   const [theme, seTheme] = useState(
@@ -32,7 +33,10 @@ const NavBar = () => {
     <div className="navbar bg-base-100 shadow px-0 ">
       <div className="flex-1">
         <Link to="/">
-          <li className="btn btn-ghost normal-case text-xl ">daisyUI</li>
+          <div className="h-[60px] w-[70px] rounded-md flex items-center  ml-2">
+            <img src={logo} alt="" />{" "}
+            <span className="font-extrabold ">YOGA</span>
+          </div>
         </Link>
       </div>
       <div className="flex-none ">
