@@ -2,7 +2,7 @@ import images from "../../../assets/image/services.jpg";
 
 const Experience = () => {
   return (
-    <div className="mt-12 mb-0">
+    <div className="mt-16 mb-0">
       <h1 className="text-4xl font-bold text-center text-[#6144FF]">
         Experience of Yoga
       </h1>

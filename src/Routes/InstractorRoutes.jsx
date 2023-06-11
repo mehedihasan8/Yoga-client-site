@@ -1,6 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useInstrucor from "../Hooks/useInstrucor";
+import Loading from "../Pages/Sharied/Loading/Loading";
 
 const InstractorRoutes = ({ children }) => {
   const { user, loading } = useAuth();
@@ -8,14 +9,7 @@ const InstractorRoutes = ({ children }) => {
   const location = useLocation();
 
   if (loading || isInsLoading) {
-    return (
-      <div>
-        <p className="text-2xl font-bold text-center my-16">
-          {" "}
-          <span className="loading loading-dots loading-lg"></span>
-        </p>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (user && isInstructor) {

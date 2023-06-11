@@ -1,10 +1,11 @@
 import useClesses from "../../Hooks/useClesses";
+import Loading from "../Sharied/Loading/Loading";
 import ClassessCard from "./ClassessCard";
 const Classess = () => {
   const [clesses, loading] = useClesses();
   const approvedYoug = clesses.filter((cles) => cles.status === "approved");
   if (loading) {
-    return <span className="loading loading-dots loading-lg"></span>;
+    return <Loading />;
   }
   return (
     <div className="mb-20 mt-10">

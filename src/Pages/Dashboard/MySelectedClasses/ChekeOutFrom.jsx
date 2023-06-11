@@ -84,15 +84,10 @@ const ChekeOutFrom = ({ selected }) => {
         transitionId: paymentIntent.id,
       };
 
-      console.log("is site id from out history classes", history);
-      console.log("is site id from out selected classes", selected);
       axiosSecure.post("/payment", history).then((res) => {
-        // console.log(res.data);
         setTransitionId(paymentIntent.id);
         if (res.data.insertedId) {
           axiosSecure.delete(`/selectedClass/${_id}`).then((res) => {
-            // const deletedd = res.data;
-            // console.log(deletedd);
             if (res.data.deletedCount > 0) {
               Swal.fire(
                 "Good payment complite!",
@@ -103,37 +98,73 @@ const ChekeOutFrom = ({ selected }) => {
           });
         }
       });
-      // console.log(paymentIntent);
     }
   };
   return (
-    <form className="w-2/4 mx-auto" onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              color: "#424770",
-              "::placeholder": {
-                color: "#aab7c4",
+    // <form className="w-2/4 mx-auto " onSubmit={handleSubmit}>
+    //   <CardElement
+    //     options={{
+    //       style: {
+    //         base: {
+    //           fontSize: "16px",
+    //           color: "#424770",
+    //           "::placeholder": {
+    //             color: "#aab7c4",
+    //           },
+    //         },
+    //         invalid: {
+    //           color: "#9e2146",
+    //         },
+    //       },
+    //     }}
+    //   />
+    //   <p className="text-red-500 text-center ">{errors}</p>
+    //   <p className="text-green-600 text-center ">{success}</p>
+    //   <div className="text-center mt-4">
+    //     <button
+    //       className="btn btn-info"
+    //       type="submit"
+    //       disabled={!stripe || !clientSecret || processing}
+    //     >
+    //       Pay
+    //     </button>
+    //   </div>
+    // </form>
+
+    <form className="max-w-lg mx-auto " onSubmit={handleSubmit}>
+      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg shadow-lg p-6">
+        <div className="mb-4">
+          <label className="block text-white text-sm font-bold mb-4 text-center ">
+            Card Details
+          </label>
+          <CardElement
+            options={{
+              style: {
+                base: {
+                  fontSize: "16px",
+                  color: "#ffffff",
+                  "::placeholder": {
+                    color: "#cbd5e0",
+                  },
+                },
+                invalid: {
+                  color: "#e53e3e",
+                },
               },
-            },
-            invalid: {
-              color: "#9e2146",
-            },
-          },
-        }}
-      />
-      <p className="text-red-500 text-center ">{errors}</p>
-      <p className="text-green-600 text-center ">{success}</p>
-      <div className="text-center mt-4">
-        <button
-          className="btn btn-info"
-          type="submit"
-          disabled={!stripe || !clientSecret || processing}
-        >
-          Pay
-        </button>
+            }}
+          />
+        </div>
+        <p className="text-red-500 text-center mb-2">{errors}</p>
+        <p className="text-green-600 text-center mb-4">{success}</p>
+        <div className="text-center">
+          <button
+            className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
+            type="submit"
+            disabled={!stripe || !clientSecret || processing}
+          >
+            {processing ? "processing...." : "Pay"}
+          </button>
+        </div>
       </div>
     </form>
   );

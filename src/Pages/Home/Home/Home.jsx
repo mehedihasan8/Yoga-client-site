@@ -6,9 +6,9 @@ import PopularClesses from "../../Popular/PopularClesses";
 
 const Home = () => {
   return (
-    <div className="mt-2">
+    <div className="max-w-6xl mx-auto">
       <Helmet>
-        <title>Sumer | Home</title>
+        <title>YOGA | Home</title>
       </Helmet>
       <HomeSwiper />
       <PopularClesses />

@@ -4,11 +4,15 @@ import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import Loading from "../../Sharied/Loading/Loading";
 
 const MySelectedClasses = () => {
-  const [selectedClass, refetch] = useMySelectedClass();
+  const [selectedClass, refetch, isLoading] = useMySelectedClass();
   const [axiosSecure] = useAxiosSecure();
-  // console.log(selectedClass);
+  console.log(selectedClass);
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const handelDeleteUser = (selected) => {
     // console.log(selected._id);
@@ -38,10 +42,10 @@ const MySelectedClasses = () => {
   return (
     <div>
       <Helmet>
-        <title>Bistro | selected Class</title>
+        <title>YOGA | selected Class</title>
       </Helmet>
-      <h1 className="text-3xl font-semibold text-center mt-12">
-        All selected Class : {selectedClass.length}
+      <h1 className="text-3xl font-semibold text-center mt-12 mb-6">
+        Selected Class : {selectedClass.length}
       </h1>
       <div className="overflow-x-auto flex flex-col items-center justify-center">
         <table className="table table-zebra">
@@ -50,11 +54,11 @@ const MySelectedClasses = () => {
             <tr>
               <th>No</th>
               <th>Image</th>
-              <th>Name</th>
-              <th>Eamil</th>
+              <th>Yoga Name</th>
+              <th>Instructor Eamil</th>
               <th>price</th>
               <th>Action</th>
-              <th>Sent</th>
+              <th>Sent Your Money</th>
             </tr>
           </thead>
           <tbody>
@@ -70,17 +74,19 @@ const MySelectedClasses = () => {
                 </td>
                 <td>{selected.instructorName}</td>
                 <td>{selected.email}</td>
-                <td>{selected.price}</td>
+                <td>${selected.price}</td>
 
                 <td>
                   <button onClick={() => handelDeleteUser(selected)}>
                     {" "}
-                    <FaTrashAlt />
+                    <FaTrashAlt className="h-10 w-6" />
                   </button>
                 </td>
                 <td>
                   <Link to={`/dashbord/payment`} state={selected}>
-                    <button>Payment</button>
+                    <button className="btn bg-[#3173DE] text-white hover:text-black ">
+                      Payment
+                    </button>
                   </Link>
                 </td>
               </tr>

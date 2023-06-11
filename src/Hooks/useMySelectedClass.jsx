@@ -1,4 +1,3 @@
-import React from "react";
 import useAxiosSecure from "./useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "./useAuth";
@@ -7,7 +6,11 @@ const useMySelectedClass = () => {
   const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecure();
 
-  const { data: selectedClass = [], refetch } = useQuery({
+  const {
+    data: selectedClass = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     enabled: !loading && !!user?.email,
 
     queryKey: ["selectedClass", user?.email],
@@ -17,7 +20,7 @@ const useMySelectedClass = () => {
       return res.data;
     },
   });
-  return [selectedClass, refetch];
+  return [selectedClass, refetch, isLoading];
 };
 
 export default useMySelectedClass;
