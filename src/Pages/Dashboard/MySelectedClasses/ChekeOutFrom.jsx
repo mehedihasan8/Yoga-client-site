@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const ChekeOutFrom = ({ selected }) => {
   const { price, image, instructorName, yogaName, _id, classId } = selected;
-  console.log(price);
+  // console.log(price);
   const [errors, setErrors] = useState("");
   const [success, setSuccess] = useState("");
   const stripe = useStripe();
@@ -16,6 +16,8 @@ const ChekeOutFrom = ({ selected }) => {
   const [axiosSecure] = useAxiosSecure();
   const [processing, setProcessing] = useState(false);
   const [transitionId, setTransitionId] = useState("");
+
+  // console.log(transitionId);
 
   useEffect(() => {
     if (price > 0) {
@@ -68,9 +70,9 @@ const ChekeOutFrom = ({ selected }) => {
     setProcessing(false);
 
     if (paymentIntent.status === "succeeded") {
-      setTransitionId(paymentIntent.id);
+      console.log(paymentIntent.id);
       setSuccess(`Your Payment Success your id ${paymentIntent.id}`);
-      Swal.fire("Good payment complite!", "You clicked the button!", "success");
+      // Swal.fire("Good payment complite!", "You clicked the button!", "success");
       const history = {
         image,
         instructorName,
@@ -78,17 +80,30 @@ const ChekeOutFrom = ({ selected }) => {
         _id,
         classId,
         email: user?.email,
+        payment: "paid",
+        transitionId: paymentIntent.id,
       };
 
       console.log("is site id from out history classes", history);
       console.log("is site id from out selected classes", selected);
       axiosSecure.post("/payment", history).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
+        setTransitionId(paymentIntent.id);
         if (res.data.insertedId) {
-          console.log("complite");
+          axiosSecure.delete(`/selectedClass/${_id}`).then((res) => {
+            const deletedd = res.data;
+            // console.log(deletedd);
+            if (res.data.deletedCount > 0) {
+              Swal.fire(
+                "Good payment complite!",
+                "You clicked the button!",
+                "success"
+              );
+            }
+          });
         }
       });
-      console.log(paymentIntent);
+      // console.log(paymentIntent);
     }
   };
   return (

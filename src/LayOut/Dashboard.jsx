@@ -7,6 +7,7 @@ import {
   RiCheckboxMultipleLine,
   RiUserSettingsLine,
 } from "react-icons/ri";
+import { MdHistory } from "react-icons/md";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 
@@ -98,6 +99,12 @@ const Dashboard = () => {
                 <NavLink to="/dashbord/MyEnrolMentClasses">
                   <RiCheckDoubleLine />
                   My Enrolled Classes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashbord/paymentHistory">
+                  <MdHistory />
+                  Your payment history
                 </NavLink>
               </li>
             </>

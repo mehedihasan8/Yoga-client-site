@@ -14,7 +14,7 @@ const Payment = () => {
   const location = useLocation();
 
   const selected = location.state;
-  console.log(selected);
+  // console.log(selected);
 
   return (
     <div>

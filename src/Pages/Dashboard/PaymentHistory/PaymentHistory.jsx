@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import useAuth from "../../../Hooks/useAuth";
 
-const MyEnrolMentClasses = () => {
+const PaymentHistory = () => {
   const [entrolClasses, setEntrolClasses] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
@@ -13,16 +15,15 @@ const MyEnrolMentClasses = () => {
   }, []);
 
   console.log(entrolClasses);
-
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-2xl text-center md:text-4xl font-semibold mb-16">
-        Your enrol ment classes {entrolClasses.length}
+        Your Transtion Total classes {entrolClasses.length}
       </h2>
 
       {entrolClasses.length === 0 ? (
         <p className="text-center md:text-3xl mt-16 text-red-400">
-          You haven't added any classes yet.
+          You haven't added any Transtion yet.
         </p>
       ) : (
         <div className="overflow-x-auto">
@@ -30,8 +31,14 @@ const MyEnrolMentClasses = () => {
             <thead>
               <tr>
                 <th className="px-1 py-4 border bg-slate-100">Image</th>
-                <th className="px-4 py-4 border bg-slate-100">Yoga Name</th>
+                <th className="px-4 py-4 border bg-slate-100">
+                  Your Class Name
+                </th>
                 <th className="px-4 py-4 border bg-slate-100">Instructor</th>
+                <th className="px-4 py-4 border bg-slate-100">
+                  {" "}
+                  Your transition id
+                </th>
                 <th className="px-4 py-4 border bg-slate-100">Status</th>
               </tr>
             </thead>
@@ -51,6 +58,7 @@ const MyEnrolMentClasses = () => {
                   <td className="px-4 py-5 border">
                     {classItem.instructorName}
                   </td>
+                  <td className="px-4 py-5 border">{classItem.transitionId}</td>
                   <td className="px-4 py-5 b  badge-accent text-center uppercase font-bold rounded-md ">
                     {classItem.payment}
                   </td>
@@ -64,4 +72,4 @@ const MyEnrolMentClasses = () => {
   );
 };
 
-export default MyEnrolMentClasses;
+export default PaymentHistory;

@@ -14,6 +14,7 @@ import ManaeClasses from "../Pages/Dashboard/MangeClasses/ManaeClasses";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
 import Payment from "../Pages/Dashboard/MySelectedClasses/Payment";
 import MyEnrolMentClasses from "../Pages/Dashboard/MyEnrolMentClasses/MyEnrolMentClasses";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: "MyEnrolMentClasses",
         element: <MyEnrolMentClasses />,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory />,
       },
       {
         path: "payment",
