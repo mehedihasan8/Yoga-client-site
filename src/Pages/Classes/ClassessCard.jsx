@@ -13,7 +13,7 @@ const ClassessCard = ({ yoga }) => {
   //   const isSelectable = isSeatsAvailable && isLoggedIn && !isAdmin;
 
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
   const navigate = useNavigate();
   const isAdmin = false;
   const isInstructor = false;
@@ -21,7 +21,7 @@ const ClassessCard = ({ yoga }) => {
   const [selected, setSelected] = useState(false);
   const [axiosSecure] = useAxiosSecure();
   const [myclass] = useCles();
-  console.log(myclass);
+  // console.log(myclass);
 
   useEffect(() => {
     const selectedClesses = myclass.find((c) => c.classId === _id);

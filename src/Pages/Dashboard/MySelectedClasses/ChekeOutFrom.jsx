@@ -5,7 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const ChekeOutFrom = ({ selected }) => {
-  const { price, image, instructorName, yogaName, _id } = selected;
+  const { price, image, instructorName, yogaName, _id, classId } = selected;
   console.log(price);
   const [errors, setErrors] = useState("");
   const [success, setSuccess] = useState("");
@@ -76,8 +76,12 @@ const ChekeOutFrom = ({ selected }) => {
         instructorName,
         yogaName,
         _id,
+        classId,
         email: user?.email,
       };
+
+      console.log("is site id from out history classes", history);
+      console.log("is site id from out selected classes", selected);
       axiosSecure.post("/payment", history).then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

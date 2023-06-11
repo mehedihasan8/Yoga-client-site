@@ -95,7 +95,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/deshbord/allusers">
+                <NavLink to="/dashbord/MyEnrolMentClasses">
                   <RiCheckDoubleLine />
                   My Enrolled Classes
                 </NavLink>

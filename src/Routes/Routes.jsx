@@ -13,6 +13,7 @@ import Error from "../Pages/Sharied/Error/Error";
 import ManaeClasses from "../Pages/Dashboard/MangeClasses/ManaeClasses";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
 import Payment from "../Pages/Dashboard/MySelectedClasses/Payment";
+import MyEnrolMentClasses from "../Pages/Dashboard/MyEnrolMentClasses/MyEnrolMentClasses";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "MySelectedClasses",
         element: <MySelectedClasses />,
+      },
+      {
+        path: "MyEnrolMentClasses",
+        element: <MyEnrolMentClasses />,
       },
       {
         path: "payment",

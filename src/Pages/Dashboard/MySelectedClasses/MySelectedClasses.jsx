@@ -3,10 +3,39 @@ import useMySelectedClass from "../../../Hooks/useMySelectedClass";
 import { Helmet } from "react-helmet";
 import { FaEdit, FaReact, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const MySelectedClasses = () => {
-  const [selectedClass] = useMySelectedClass();
-  console.log(selectedClass);
+  const [selectedClass, refetch] = useMySelectedClass();
+  const [axiosSecure] = useAxiosSecure();
+  // console.log(selectedClass);
+
+  const handelDeleteUser = (selected) => {
+    // console.log(selected._id);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: `You won't be Delete ${selected.yogaName} `,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/selectedClass/${selected._id}`).then((res) => {
+          const deletedd = res.data;
+          // console.log(deletedd);
+          if (res.data.deletedCount > 0) {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            refetch();
+          }
+        });
+      }
+    });
+  };
+
   return (
     <div>
       <Helmet>
