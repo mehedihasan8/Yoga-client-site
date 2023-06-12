@@ -21,7 +21,7 @@ const ClassUpDate = () => {
       availableSeats,
     };
     console.log(upDateNewClass);
-    fetch(`http://localhost:5000/addedclass/${_id}`, {
+    fetch(`https://summer-camping-server.vercel.app/addedclass/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
