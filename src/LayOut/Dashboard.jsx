@@ -17,10 +17,10 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstrucor();
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
   // const isAdmin = admin[0];
 
-  console.log(isAdmin);
+  // console.log(isAdmin);
 
   return (
     <div className="drawer lg:drawer-open  ">

@@ -18,6 +18,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import AdminRoutes from "./AdminRoutes";
 import InstractorRoutes from "./InstractorRoutes";
 import PrivetRoues from "./PrivetRoues";
+import ClassUpDate from "../Pages/Dashboard/ClassUpdate/ClassUpDate";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
         <Dashboard />
       </PrivetRoues>
     ),
-    errorElement: <Error />,
+    // errorElement: <Error />,
     children: [
       {
         path: "manageuser",
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "MySelectedClasses",
         element: <MySelectedClasses />,
+      },
+      {
+        path: "update",
+        element: <ClassUpDate />,
       },
       {
         path: "MyEnrolMentClasses",

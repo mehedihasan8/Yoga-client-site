@@ -1,6 +1,7 @@
 import useAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const MyClasses = () => {
   const [addedClasses, setAddedClasses] = useState([]);
@@ -69,6 +70,7 @@ const MyClasses = () => {
                 <th className="px-4 py-4 border bg-slate-100">Price</th>
                 <th className="px-4 py-4 border bg-slate-100">Enroll</th>
                 <th className="px-4 py-4 border bg-slate-100">Status</th>
+                <th className="px-4 py-4 border bg-slate-100">Update</th>
               </tr>
             </thead>
             <tbody>
@@ -128,6 +130,11 @@ const MyClasses = () => {
                         </dialog>
                       </div>
                     )}
+                  </td>
+                  <td className="px-4 py-5 border">
+                    <Link to={`/dashbord/update`} state={classItem}>
+                      <button className="btn">update</button>
+                    </Link>
                   </td>
                 </tr>
               ))}
