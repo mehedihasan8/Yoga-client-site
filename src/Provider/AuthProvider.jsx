@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
     const unSubcribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", {
+          .post("https://summer-camping-server.vercel.app/jwt", {
             email: currentUser.email,
           })
           .then((res) => {

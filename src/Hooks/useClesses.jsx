@@ -8,7 +8,9 @@ const useClesses = () => {
   } = useQuery({
     queryKey: ["clesses"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/clesses");
+      const res = await fetch(
+        "https://summer-camping-server.vercel.app/clesses"
+      );
       return res.json();
     },
   });

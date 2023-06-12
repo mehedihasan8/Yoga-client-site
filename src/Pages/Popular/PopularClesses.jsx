@@ -4,8 +4,10 @@ import { useState } from "react";
 
 const PopularClesses = () => {
   const [classes, setClasses] = useState([]);
+  const approvedYoug = classes.filter((cles) => cles.status === "approved");
+
   useEffect(() => {
-    fetch(`http://localhost:5000/populerclasses`)
+    fetch(`https://summer-camping-server.vercel.app/populerclasses`)
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
@@ -16,7 +18,7 @@ const PopularClesses = () => {
     <div>
       <h1 className="text-4xl font-bold text-center lg:mb-20">Our Classe's</h1>
       <div className="w-[95%] mx-auto mt-10 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {classes.map((singelClass) => (
+        {approvedYoug.map((singelClass) => (
           <PopularClessesCard
             key={singelClass._id}
             singelClass={singelClass}

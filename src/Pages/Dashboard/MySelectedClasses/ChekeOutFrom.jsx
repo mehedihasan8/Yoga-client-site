@@ -79,11 +79,13 @@ const ChekeOutFrom = ({ selected }) => {
         yogaName,
         _id,
         classId,
+        date: new Date(),
         email: user?.email,
         payment: "paid",
         transitionId: paymentIntent.id,
       };
 
+      console.log("new updata ", history);
       axiosSecure.post("/payment", history).then((res) => {
         setTransitionId(paymentIntent.id);
         if (res.data.insertedId) {
@@ -101,36 +103,6 @@ const ChekeOutFrom = ({ selected }) => {
     }
   };
   return (
-    // <form className="w-2/4 mx-auto " onSubmit={handleSubmit}>
-    //   <CardElement
-    //     options={{
-    //       style: {
-    //         base: {
-    //           fontSize: "16px",
-    //           color: "#424770",
-    //           "::placeholder": {
-    //             color: "#aab7c4",
-    //           },
-    //         },
-    //         invalid: {
-    //           color: "#9e2146",
-    //         },
-    //       },
-    //     }}
-    //   />
-    //   <p className="text-red-500 text-center ">{errors}</p>
-    //   <p className="text-green-600 text-center ">{success}</p>
-    //   <div className="text-center mt-4">
-    //     <button
-    //       className="btn btn-info"
-    //       type="submit"
-    //       disabled={!stripe || !clientSecret || processing}
-    //     >
-    //       Pay
-    //     </button>
-    //   </div>
-    // </form>
-
     <form className="max-w-lg mx-auto " onSubmit={handleSubmit}>
       <div className="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg shadow-lg p-6">
         <div className="mb-4">

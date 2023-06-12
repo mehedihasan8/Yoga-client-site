@@ -9,7 +9,7 @@ const image_bb_token = "654b1e85ae0488c966b1aaf034e8cab2";
 const AddClasses = () => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useAuth();
-  console.log(image_bb_token, user);
+  // console.log(image_bb_token, user);
   const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_bb_token}`;
   const {
     register,
@@ -19,7 +19,7 @@ const AddClasses = () => {
   } = useForm();
   const onSubmit = (data) => {
     const fromData = new FormData();
-    console.log(data);
+    // console.log(data);
 
     fromData.append("image", data.image[0]);
 
@@ -39,9 +39,11 @@ const AddClasses = () => {
             availableSeats: seats,
             email,
             image: imgURL,
+            status: "pending",
           };
-          addClasses.status = "pending";
-          console.log(addClasses);
+
+          // console.log(addClasses);
+
           axiosSecure.post("/addclass", addClasses).then((res) => {
             if (res.data.insertedId) {
               reset();
@@ -50,19 +52,19 @@ const AddClasses = () => {
                 "You clicked the button!",
                 "success"
               );
-              console.log("add item data", res.data);
+              // console.log("add item data", res.data);
             }
           });
         }
       });
     // console.log(data);
   };
-  console.log(errors);
+  // console.log(errors);
   return (
     <div className="w-full mt-6 px-6">
-      <Helmet title="Summer | Add Class"></Helmet>
-      <h1 className="text-4xl font-bold text-center lg:my-10">
-        please add class{" "}
+      <Helmet title="YOGA | Add Class"></Helmet>
+      <h1 className="text-4xl font-bold text-center text-[#3173DE] lg:mb-10 mt-16">
+        Please add class{" "}
       </h1>
 
       <div className="bg-[#F3F3F3] px-6 rounded-xl">

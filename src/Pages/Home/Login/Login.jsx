@@ -6,6 +6,7 @@ import { FaEye, FaEyeSlash, FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import loginImage from "../../../../public/loginImage.png";
 import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { signeInUser } = useAuth();
@@ -47,7 +48,10 @@ const Login = () => {
 
   return (
     <>
-      <div className="lg:flex">
+      <Helmet>
+        <title>YOGA | Login</title>
+      </Helmet>
+      <div className="lg:flex mt-12">
         <div className="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-24 rounded-md w-full max-w-md">
           <div className="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">
             Login to your account
@@ -114,12 +118,12 @@ const Login = () => {
               <div className="flex w-full">
                 <button
                   type="submit"
-                  className="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in"
+                  className="flex items-center justify-center btn btn-accent  border-0 bg-[#6144FF] text-white text-sm sm:text-base  rounded py-2 w-full transition duration-150 ease-in"
                 >
-                  <span className="mr-2 uppercase">login</span>
+                  <span className=" uppercase">login</span>
                   <span>
                     <svg
-                      className="h-6 w-6"
+                      className="h-5 w-5"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"

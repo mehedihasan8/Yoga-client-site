@@ -3,10 +3,10 @@ import images from "../../../assets/image/services.jpg";
 const Experience = () => {
   return (
     <div className="mt-16 mb-0">
-      <h1 className="text-4xl font-bold text-center text-[#6144FF]">
+      <h1 className="text-4xl font-bold text-center  text-[#6144FF]">
         Experience of Yoga
       </h1>
-      <div className="mt-10 lg:mb-24 lg:mt-24 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 mb-10 lg:mb-24 lg:mt-24 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
         <div className="px-4 lg:px-0">
           <div className=" text-center lg:text-right mt-6">
             <h1 className="text-2xl font-semibold ">Balance Body & Mind</h1>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
 import logo from "../../../assets/image/WhatsApp Image 2023-06-11 at 7.01.36 PM.jpeg";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 const NavBar = () => {
   const [theme, seTheme] = useState(
@@ -77,45 +78,54 @@ const NavBar = () => {
               </svg>
             </label>
           </div>
-          <div className="dropdown dropdown-end ">
-            <label tabIndex={0} className="btn btn-ghost  btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <div className="tooltip" data-tip="hello">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src={user?.photoURL}
-                    alt="photo"
-                  />
+          {user ? (
+            <div className="dropdown dropdown-end ">
+              <label tabIndex={0} className="btn btn-ghost  btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <div className="tooltip" data-tip="hello">
+                    <img
+                      className="h-10 w-10 rounded-full"
+                      src={user?.photoURL}
+                      alt="photo"
+                    />
+                  </div>
                 </div>
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content z-50 mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <Link to="/instractor">Instructors</Link>
-              </li>
-              <li>
-                <Link to="/classes">Classes</Link>
-              </li>
-
-              <li>
-                <Link to="/dashbord">Dashbord</Link>
-              </li>
-              {user ? (
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content z-50 mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
                 <li>
-                  <button onClick={handlogOut}>Logout</button>
+                  <Link to="/instractor">Instructors</Link>
                 </li>
-              ) : (
-                <Link to="/login">
+                <li>
+                  <Link to="/classes">Classes</Link>
+                </li>
+
+                <li>
+                  <Link to="/dashbord">Dashbord</Link>
+                </li>
+                {user ? (
                   <li>
-                    <button>Login</button>
+                    <button onClick={handlogOut}>Logout</button>
                   </li>
-                </Link>
-              )}
-            </ul>
-          </div>
+                ) : (
+                  <Link to="/login">
+                    <li>
+                      <button>Login</button>
+                    </li>
+                  </Link>
+                )}
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              {" "}
+              <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
+                login <FaArrowCircleRight />
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

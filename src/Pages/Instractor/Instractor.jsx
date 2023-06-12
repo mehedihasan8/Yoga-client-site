@@ -1,14 +1,24 @@
 import InstractorCard from "./InstractorCard";
+import { useState } from "react";
+import { useEffect } from "react";
 
-import instractors from "../../../public/instactor.json";
 const Instractor = () => {
-  // const [instractors] = useInstractor();
+  const [instractors, setInstractors] = useState([]);
+  // const [loading , setLoading] = useState(false)
+  useEffect(() => {
+    fetch(`https://summer-camping-server.vercel.app/instractorall`)
+      .then((res) => res.json())
+      .then((data) => {
+        setInstractors(data);
+      });
+  }, []);
+
   return (
-    <div>
-      <h1 className="text-4xl font-bold text-center text-[#6144FF] lg:mb-20">
+    <div className="mb-20 ">
+      <h1 className="text-4xl font-bold text-center my-16 text-[#6144FF] ">
         Our Professional Trainer
       </h1>
-      <div className="w-[95%] mx-auto mt-10 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="w-[95%] mx-auto  grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
         {instractors.map((instructor) => (
           <InstractorCard
             key={instructor._id}

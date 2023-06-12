@@ -9,7 +9,7 @@ import Loading from "../../Sharied/Loading/Loading";
 const MySelectedClasses = () => {
   const [selectedClass, refetch, isLoading] = useMySelectedClass();
   const [axiosSecure] = useAxiosSecure();
-  console.log(selectedClass);
+  // console.log(selectedClass);
   if (isLoading) {
     return <Loading />;
   }
@@ -42,7 +42,7 @@ const MySelectedClasses = () => {
   return (
     <div>
       <Helmet>
-        <title>YOGA | selected Class</title>
+        <title>YOGA | Selected Class</title>
       </Helmet>
       <h1 className="text-3xl font-semibold text-center mt-12 mb-6">
         Selected Class : {selectedClass.length}

@@ -20,7 +20,8 @@ const ClassessCard = ({ yoga }) => {
   const [selected, setSelected] = useState(false);
   const [axiosSecure] = useAxiosSecure();
   const [myclass] = useCles();
-  // console.log(myclass);
+  // const isUser = user?.role === "student";
+  // console.log(user);
 
   useEffect(() => {
     const selectedClesses = myclass.find((c) => c.classId === _id);

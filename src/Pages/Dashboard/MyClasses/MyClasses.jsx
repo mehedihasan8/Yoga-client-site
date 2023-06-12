@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-// import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-// import { useQuery } from "@tanstack/react-query";
 
 const MyClasses = () => {
   const [addedClasses, setAddedClasses] = useState([]);
@@ -16,7 +13,7 @@ const MyClasses = () => {
   //     setAddedClasses(res.data);
   //   });
   //   useEffect(() => {
-  //     fetch(`http://localhost:5000/addedclass?email=${user?.email}`)
+  //     fetch(`https://summer-camping-server.vercel.app/addedclass?email=${user?.email}`)
   //       .then((res) => res.json())
   //       .then((data) => {
   //         setAddedClasses(data);
@@ -54,7 +51,7 @@ const MyClasses = () => {
         My Classes
       </h2>
 
-      {addedClasses.length === 0 ? (
+      {addedClasses?.length === 0 ? (
         <p className="text-center md:text-3xl mt-16 text-red-400">
           You haven't added any classes yet.
         </p>
@@ -75,7 +72,7 @@ const MyClasses = () => {
               </tr>
             </thead>
             <tbody>
-              {addedClasses.map((classItem) => (
+              {addedClasses?.map((classItem) => (
                 <tr key={classItem._id} className="text-center">
                   <td className="py-1 border">
                     <div className="w-[80%] rounded-md mx-auto">
@@ -93,7 +90,7 @@ const MyClasses = () => {
                   <td className="px-4 py-5 border">
                     {classItem.availableSeats}
                   </td>
-                  <td className="px-4 py-5 border">{classItem.price}</td>
+                  <td className="px-4 py-5 border">${classItem.price}</td>
                   <td className="px-4 py-5 border">
                     {classItem.totalEnrolled ? classItem.totalEnrolled : "0"}
                   </td>

@@ -21,11 +21,14 @@ const Social = () => {
         );
         const saveUser = {
           name: user.displayName,
+          image: user.photoURL,
           email: user.email,
           role: "student",
         };
 
-        fetch("http://localhost:5000/users", {
+        console.log(saveUser);
+
+        fetch("https://summer-camping-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -35,11 +38,7 @@ const Social = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            Swal.fire(
-              "Account Create Success!",
-              "You clicked the button!",
-              "success"
-            );
+            Swal.fire("Login Success!", "You clicked the button!", "success");
             navigate(from, { replace: true });
           });
       })
