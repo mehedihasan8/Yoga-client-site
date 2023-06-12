@@ -1,18 +1,18 @@
 ## My Awesome YOGA Website Project
 
-- YOGA is an awesome project that showcases various car models and provides information about them.
+- YOGA is an awesome project that showcases various yoga classes and provides information about them.
 
 ## Features
 
 - Browse and search for different toy car models
 
-- View detailed information and specifications of each car
+- View detailed information and specifications of each yoga class
 
-- Filter cars based on criteria such as brand, price etc
+- payment based on his class price base etc
 
-- Save favorite cars for future reference
+- post instracturs class and see enrol details
 
-- User authentication and account management
+- User authentication and account management and save user data
 
 ## Technologies Used
 
@@ -28,11 +28,11 @@
 
 ## Live Link
 
-- Hosted in Firebase -> [Car World](https://toy-car-ce3f5.web.app/)
+- Hosted in Firebase -> [YOGA](https://simple-firebase-project-a5441.web.app/)
 
 ## Api Link
 
-- Hosted in Varcel -> [Car World Api Link ](https://toy-car-server-rho.vercel.app/totalData)
+- Hosted in Varcel -> [YOGA Api Link ](https://summer-camping-server.vercel.app/)
 
 ## Installation
 
