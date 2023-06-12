@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         <Dashboard />
       </PrivetRoues>
     ),
-    // errorElement: <Error />,
+    errorElement: <Error />,
     children: [
       {
         path: "manageuser",
