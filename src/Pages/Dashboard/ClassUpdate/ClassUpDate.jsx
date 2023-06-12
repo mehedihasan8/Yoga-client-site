@@ -5,7 +5,7 @@ const ClassUpDate = () => {
   const location = useLocation();
 
   const classItem = location.state;
-  console.log(classItem);
+  //   console.log(classItem);
 
   const { price, availableSeats, _id } = classItem;
 
@@ -20,7 +20,7 @@ const ClassUpDate = () => {
       price,
       availableSeats,
     };
-    console.log(upDateNewClass);
+    // console.log(upDateNewClass);
     fetch(`https://summer-camping-server.vercel.app/addedclass/${_id}`, {
       method: "PUT",
       headers: {
@@ -86,7 +86,7 @@ const ClassUpDate = () => {
             <input
               type="submit"
               value="Update"
-              className="btn bg-[#3173DE] btn-block"
+              className="btn btn-accent text-white border-0 bg-[#6144FF] btn-block"
             />
           </div>
         </form>

@@ -47,7 +47,7 @@ const ClassessCard = ({ yoga }) => {
       };
 
       axiosSecure.post(`/myclass?email=${user.email}`, Classes).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data === "card already exists") {
           // Handle case when the sport is already selected
         }

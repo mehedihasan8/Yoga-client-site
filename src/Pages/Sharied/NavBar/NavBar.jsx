@@ -10,7 +10,7 @@ const NavBar = () => {
   );
 
   const handelToggol = (e) => {
-    console.log("cliked from togol");
+    // console.log("cliked from togol");
     if (e.target.checked) {
       seTheme("dark");
     } else {
@@ -24,7 +24,7 @@ const NavBar = () => {
   }, [theme]);
 
   const { user, logOut } = useAuth();
-  console.log(user);
+  // console.log(user);
 
   const handlogOut = () => {
     logOut();

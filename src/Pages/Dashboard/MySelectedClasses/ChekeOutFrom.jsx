@@ -50,7 +50,7 @@ const ChekeOutFrom = ({ selected }) => {
       setErrors(error.message);
     } else {
       setErrors("");
-      console.log("[PaymentMethod]", paymentMethod);
+      // console.log("[PaymentMethod]", paymentMethod);
     }
     setProcessing(true);
     const { paymentIntent, error: confirmError } =
@@ -64,13 +64,13 @@ const ChekeOutFrom = ({ selected }) => {
         },
       });
     if (confirmError) {
-      console.log(confirmError);
+      // console.log(confirmError);
     }
 
     setProcessing(false);
 
     if (paymentIntent.status === "succeeded") {
-      console.log(paymentIntent.id);
+      // console.log(paymentIntent.id);
       setSuccess(`Your Payment Success your id ${paymentIntent.id}`);
       // Swal.fire("Good payment complite!", "You clicked the button!", "success");
       const history = {
@@ -85,7 +85,7 @@ const ChekeOutFrom = ({ selected }) => {
         transitionId: paymentIntent.id,
       };
 
-      console.log("new updata ", history);
+      // console.log("new updata ", history);
       axiosSecure.post("/payment", history).then((res) => {
         setTransitionId(paymentIntent.id);
         if (res.data.insertedId) {

@@ -20,11 +20,11 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data.email, data.password);
+    // console.log(data.email, data.password);
     signeInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
 
         // console.log(user);
         Swal.fire("Good job Login!", "You clicked the button!", "success");

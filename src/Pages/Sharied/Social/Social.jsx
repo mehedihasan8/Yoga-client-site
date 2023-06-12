@@ -9,11 +9,11 @@ const Social = () => {
   const from = location.state?.from?.pathname || "/";
 
   const signInWithGoogle = () => {
-    console.log("click");
+    // console.log("click");
     signInGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         Swal.fire(
           "Account Create Success!",
           "You clicked the button!",
@@ -26,7 +26,7 @@ const Social = () => {
           role: "student",
         };
 
-        console.log(saveUser);
+        // console.log(saveUser);
 
         fetch("https://summer-camping-server.vercel.app/users", {
           method: "POST",
@@ -37,13 +37,13 @@ const Social = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             Swal.fire("Login Success!", "You clicked the button!", "success");
             navigate(from, { replace: true });
           });
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       });
   };
   return (

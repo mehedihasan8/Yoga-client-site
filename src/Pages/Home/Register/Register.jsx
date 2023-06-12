@@ -47,7 +47,7 @@ const Register = () => {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                   Swal.fire(
                     "Account Create Success!",
@@ -60,11 +60,11 @@ const Register = () => {
               });
           })
           .catch((error) => {
-            console.log(error.message);
+            // console.log(error.message);
           });
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
         Swal.fire(`${error.message}`, "You clicked the button!", "error");
       });
     // console.log(errors);

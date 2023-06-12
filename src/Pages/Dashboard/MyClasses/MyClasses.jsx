@@ -133,7 +133,9 @@ const MyClasses = () => {
                   </td>
                   <td className="px-4 py-5 border">
                     <Link to={`/dashbord/update`} state={classItem}>
-                      <button className="btn">update</button>
+                      <button className="btn btn-accent text-white border-0 bg-[#6144FF]">
+                        update
+                      </button>
                     </Link>
                   </td>
                 </tr>
