@@ -4,9 +4,9 @@ import logo from "../../../assets/image/WhatsApp Image 2023-06-11 at 7.01.36 PM.
 const Footer = () => {
   return (
     <div className="bg-[#0F172A]">
-      <footer className="footer py-10 mt-12 max-w-6xl mx-auto   text-white">
+      <footer className="footer py-10 px-10 lg:px-0 mt-12 max-w-6xl mx-auto  text-center text-white">
         <div>
-          <span className="footer-title">Services</span>
+          <span className="footer-title">Company Name</span>
           <div className="h-[70px] w-[70px] rounded-md flex items-center  ">
             <img src={logo} alt="" />{" "}
             <span className="font-extrabold ml-1">YOGA</span>
@@ -16,7 +16,7 @@ const Footer = () => {
           <a className="link link-hover">Advertisement</a>
         </div>
         <div>
-          <span className="footer-title">Company</span>
+          <span className="footer-title">Company About</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>

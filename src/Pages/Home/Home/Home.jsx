@@ -3,17 +3,24 @@ import HomeSwiper from "../Swiper/HomeSwiper";
 import Experience from "../Experience/Experience";
 import PopularClesses from "../../Popular/PopularClesses";
 import PopularInstractors from "../../Popular/PopularInstractors";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import "./Home.css";
 
 const Home = () => {
+  // const { scrollYProgress } = useScroll();
   const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
     <>
-      <motion.div
+      {/* <motion.div
         className="progress-bar"
         style={{ scaleX: scrollYProgress }}
-      />
+      /> */}
+      <motion.div className="progress-bar" style={{ scaleX }} />
       <div className="max-w-6xl mx-auto">
         <Helmet>
           <title>YOGA | Home</title>
