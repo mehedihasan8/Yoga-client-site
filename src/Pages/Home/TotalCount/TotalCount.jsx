@@ -16,14 +16,13 @@ const TotalCount = () => {
           borderRadius: "10px",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
-
           marginTop: "70px",
           backgroundSize: "cover",
           //   className="lg:flex justify-center gap-x-16 items-center lg:h-full   text-center  font-bold px-4"
         }}
-        className="h-[80vh] md:h-[60vh]"
+        className="h-[80vh] md:h-[60vh] flex items-center justify-center"
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 justify-center  text-center md:px-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 text-center  gap-16">
           <div>
             {countOn && (
               <>
