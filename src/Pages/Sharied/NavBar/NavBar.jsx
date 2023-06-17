@@ -119,12 +119,14 @@ const NavBar = () => {
               </ul>
             </div>
           ) : (
-            <Link to="/login">
-              {" "}
-              <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
-                login <FaArrowCircleRight />
-              </button>
-            </Link>
+            <>
+              <Link to="/login">
+                {" "}
+                <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
+                  login <FaArrowCircleRight />
+                </button>
+              </Link>
+            </>
           )}
         </div>
       </div>

@@ -5,6 +5,7 @@ import PopularClesses from "../../Popular/PopularClesses";
 import PopularInstractors from "../../Popular/PopularInstractors";
 import { motion, useScroll, useSpring } from "framer-motion";
 import "./Home.css";
+import TotalCount from "../TotalCount/TotalCount";
 
 const Home = () => {
   // const { scrollYProgress } = useScroll();
@@ -29,6 +30,7 @@ const Home = () => {
         <PopularClesses />
         <Experience />
         <PopularInstractors />
+        <TotalCount />
       </div>
     </>
   );

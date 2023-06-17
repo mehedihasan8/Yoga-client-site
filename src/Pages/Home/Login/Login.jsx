@@ -144,7 +144,7 @@ const Login = () => {
               className="inline-flex items-center font-bold text-blue-500 hover:text-blue-700 text-xs text-center"
             >
               <FaPlus />
-              <span className="ml-2">New to Summer Campe please Signup?</span>
+              <span className="ml-2">New to yoga please Signup?</span>
             </Link>
             {/* <div
               onClick={handleResetPass}

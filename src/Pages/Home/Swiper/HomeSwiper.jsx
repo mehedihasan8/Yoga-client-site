@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./HomeSwiper.css";
+import { Link } from "react-router-dom";
 
 const HomeSwiper = () => {
   return (
@@ -35,10 +36,12 @@ const HomeSwiper = () => {
                 Your Health is Our Top Priority with Comprehensive, Affordable
                 medical.
               </h3>
-
-              <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
-                view our work
-              </button>
+              <Link to="/classes">
+                {" "}
+                <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
+                  view our Class
+                </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -53,9 +56,12 @@ const HomeSwiper = () => {
                 Your Health is Our Top Priority with Comprehensive, Affordable
                 medical.
               </h3>
-              <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
-                view our work
-              </button>
+              <Link to="/classes">
+                {" "}
+                <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
+                  view our Class
+                </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -70,9 +76,12 @@ const HomeSwiper = () => {
                 Your Health is Our Top Priority with Comprehensive, Affordable
                 medical.
               </h3>
-              <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
-                view our work
-              </button>
+              <Link to="/classes">
+                {" "}
+                <button className="btn btn-accent border-0 text-white bg-[#6144FF]">
+                  view our Class
+                </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
