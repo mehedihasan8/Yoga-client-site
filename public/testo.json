@@ -1,0 +1,50 @@
+[
+  {
+    "name": "John Doe",
+    "designation": "Yoga Enthusiast",
+    "testimonial": "I have been practicing yoga for several years, and I must say that this website has been a game-changer for me. The tutorials and resources provided here are exceptional and have helped me deepen my practice. Highly recommended!",
+    "image": "../src/assets/image/person_1.jpg"
+  },
+  {
+    "name": "Jane Smith",
+    "designation": "Yoga Instructor",
+    "testimonial": "As a yoga instructor, I often refer my students to this website for additional learning and inspiration. The content is well-structured, informative, and caters to practitioners of all levels. It's a valuable resource in the yoga community.",
+    "image": "../src/assets/image/person_2.jpg"
+  },
+  {
+    "name": "Alex Johnson",
+    "designation": "Beginner Yogi",
+    "testimonial": "I recently started my yoga journey, and I'm so glad I found this website. The step-by-step guides and instructional videos have made it easy for me to get started and progress at my own pace. I feel more connected to my body and mind through yoga.",
+    "image": "../src/assets/image/person_3.jpg"
+  },
+  {
+    "name": "Sarah Williams",
+    "designation": "Yoga Teacher",
+    "testimonial": "This website has become my go-to resource for planning my yoga classes. The variety of sequences, pose breakdowns, and mindfulness practices are invaluable. It has significantly enhanced my teaching skills.",
+    "image": "../src/assets/image/person_4.jpg"
+  },
+  {
+    "name": "Michael Thompson",
+    "designation": "Yoga Practitioner",
+    "testimonial": "I've tried many yoga websites, but this one stands out. The user-friendly interface, expert guidance, and diverse content have helped me maintain a consistent practice. My flexibility and overall well-being have improved remarkably.",
+    "image": "../src/assets/image/person_1.jpg"
+  },
+  {
+    "name": "Emily Davis",
+    "designation": "Yoga Enthusiast",
+    "testimonial": "This website has been a sanctuary for me. The soothing meditation practices and inspiring articles have nurtured my mind, body, and soul. I'm grateful to have discovered such a treasure trove of wisdom and peace.",
+    "image": "../src/assets/image/person_2.jpg"
+  },
+  {
+    "name": "David Wilson",
+    "designation": "Yoga Teacher",
+    "testimonial": "As a yoga instructor, I rely on this website for new ideas and inspiration. The well-curated content and expert advice have helped me design engaging and transformative yoga sessions for my students. Highly recommended for yoga professionals!",
+    "image": "../src/assets/image/person_3.jpg"
+  },
+  {
+    "name": "Olivia Adams",
+    "designation": "Yoga Practitioner",
+    "testimonial": "I have been using this website for my home practice, and it has been a game-changer. The detailed pose tutorials and guided sequences make it feel like having a personal yoga instructor at home. It has transformed my practice and boosted my confidence.",
+    "image": "../src/assets/image/person_4.jpg"
+  }
+]

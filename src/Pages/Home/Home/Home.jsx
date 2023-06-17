@@ -6,6 +6,7 @@ import PopularInstractors from "../../Popular/PopularInstractors";
 import { motion, useScroll, useSpring } from "framer-motion";
 import "./Home.css";
 import TotalCount from "../TotalCount/TotalCount";
+import Testimonyal from "../Testimonyal/Testimonyal";
 
 const Home = () => {
   // const { scrollYProgress } = useScroll();
@@ -17,10 +18,6 @@ const Home = () => {
   });
   return (
     <>
-      {/* <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      /> */}
       <motion.div className="progress-bar" style={{ scaleX }} />
       <div className="max-w-6xl mx-auto">
         <Helmet>
@@ -30,6 +27,7 @@ const Home = () => {
         <PopularClesses />
         <Experience />
         <PopularInstractors />
+        <Testimonyal />
         <TotalCount />
       </div>
     </>

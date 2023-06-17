@@ -8,7 +8,7 @@ const Experience = () => {
       </h1>
       <div className="mt-10 mb-10 lg:mb-24 lg:mt-24 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
         <div className="px-4 lg:px-0">
-          <div className=" text-center lg:text-right mt-6">
+          <div className=" text-center lg:text-right">
             <h1 className="text-2xl font-semibold ">Balance Body & Mind</h1>
             <p className="leading-6 mt-2">
               A small river named Duden flows by their place and supplies it
@@ -39,11 +39,11 @@ const Experience = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div className="mt-4">
           <img src={images} alt="" />
         </div>
         <div className="px-4 lg:px-0">
-          <div className=" text-center lg:text-left mt-6">
+          <div className=" text-center lg:text-left">
             <h1 className="text-2xl font-semibold ">
               Betters your bone health
             </h1>
