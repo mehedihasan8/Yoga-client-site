@@ -15,7 +15,7 @@ const Testimonyal = () => {
       .then((data) => setUsers(data));
   }, []);
 
-  console.log("testomini ", users);
+  //   console.log("testomini ", users);
 
   return (
     <>
@@ -30,7 +30,7 @@ const Testimonyal = () => {
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
-          stretch: 0,
+          stretch: 4,
           depth: 100,
           modifier: 1,
           slideShadows: true,

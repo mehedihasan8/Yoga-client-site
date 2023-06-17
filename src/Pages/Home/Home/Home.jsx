@@ -7,6 +7,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import "./Home.css";
 import TotalCount from "../TotalCount/TotalCount";
 import Testimonyal from "../Testimonyal/Testimonyal";
+import Blog from "../Blog/Blog";
+import Gallery from "../Gallery/Gallery";
 
 const Home = () => {
   // const { scrollYProgress } = useScroll();
@@ -29,6 +31,8 @@ const Home = () => {
         <PopularInstractors />
         <Testimonyal />
         <TotalCount />
+        <Blog />
+        <Gallery />
       </div>
     </>
   );

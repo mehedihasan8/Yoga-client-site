@@ -19,6 +19,7 @@ import AdminRoutes from "./AdminRoutes";
 import InstractorRoutes from "./InstractorRoutes";
 import PrivetRoues from "./PrivetRoues";
 import ClassUpDate from "../Pages/Dashboard/ClassUpdate/ClassUpDate";
+import Blogs from "../Pages/Home/Blog/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/classes",
         element: <Classess />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
     ],
   },

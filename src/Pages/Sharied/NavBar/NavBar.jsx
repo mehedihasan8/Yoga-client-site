@@ -105,6 +105,9 @@ const NavBar = () => {
                 <li>
                   <Link to="/dashbord">Dashbord</Link>
                 </li>
+                <li>
+                  <Link to="/blogs">Blog's</Link>
+                </li>
                 {user ? (
                   <li>
                     <button onClick={handlogOut}>Logout</button>

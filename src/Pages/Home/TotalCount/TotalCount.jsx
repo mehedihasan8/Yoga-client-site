@@ -29,7 +29,7 @@ const TotalCount = () => {
                 <CountUp
                   className=" text-3xl lg:text-5xl h-full   font-bold"
                   start={0}
-                  end={2567}
+                  end={996}
                   delay={0}
                   duration={2}
                 />
