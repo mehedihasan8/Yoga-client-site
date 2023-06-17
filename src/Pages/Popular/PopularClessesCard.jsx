@@ -39,7 +39,7 @@ const PopularClessesCard = ({ singelClass }) => {
       <p className="text-sm mb-2">Available Seats: {availableSeats}</p>
       <p className="text-sm mb-4">Price: ${price}</p>
       <Link to="/classes">
-        <button className="btn mb-3 btn-accent text-white border-0 bg-[#6144FF] w-full">
+        <button className="btn mb-3 border-0 bg-[#6144FF] w-full">
           View Class
         </button>
       </Link>
