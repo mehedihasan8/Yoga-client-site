@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// useEffect(() => {
+//   AOS.init({ duration: 1000 });
+// }, []);
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,15 +16,23 @@ const Blog = () => {
       .then((data) => setBlogs(data));
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   console.log(blogs);
   return (
     <>
-      <h1 className="text-4xl font-bold text-[#6144FF] text-center my-16">
+      <h1
+        data-aos="fade-down"
+        data-aos-duration="3000"
+        className="text-4xl font-bold text-[#6144FF] text-center my-16"
+      >
         Latest Posts & Articles
       </h1>
       <div className="mx-auto mt-10 grid gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-0">
         {slicedBlogs.map((blog) => (
-          <div key={blog.id} className=" mb-4">
+          <div data-aos="zoom-in-up" key={blog.id} className=" mb-4">
             <div className="mx-auto h-[20rem] mb-4 ">
               <img
                 src={blog.image}
@@ -36,7 +49,7 @@ const Blog = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center my-4">
+      <div data-aos="fade-down" className="flex justify-center my-4">
         <Link to="/blogs">
           {" "}
           <button className="btn btn-accent  border-0 text-white bg-[#6144FF]">

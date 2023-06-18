@@ -2,7 +2,7 @@ body {
   --black: #111111;
   --white: #fdfdfd;
   --green: #22cc88;
-  --blue: #0055ff;
+  --blue: #6144ff;
   --purple: #8855ff;
   --red: #ff0055;
   --orange: #ee4444;
@@ -18,28 +18,6 @@ body {
   color: var(--accent);
   /* padding-bottom: 100px; */
 }
-
-/* h1,
-h2,
-h3 {
-  font-family: sofia-pro, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 1.2;
-  text-align: center;
-  margin: 100px 0 40px;
-}
-
-h2 {
-  font-weight: 400;
-  margin: 50px 0 10px;
-} */
 
 code {
   font-family: input-mono, monospace;
@@ -59,6 +37,6 @@ article {
   left: 0;
   right: 0;
   height: 10px;
-  background: var(--red);
+  background: var(--blue);
   transform-origin: 0%;
 }

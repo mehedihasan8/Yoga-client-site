@@ -5,11 +5,19 @@ const PopularClessesCard = ({ singelClass }) => {
     singelClass;
 
   return (
-    <div className="p-4 rounded-lg shadow-md hover:shadow-lg transition duration-200 ease-in-out transform hover:scale-110">
+    <div
+      data-aos="fade-down"
+      data-aos-duration="3000"
+      className="p-4 rounded-lg shadow-md transition duration-200 ease-in-out transform hover:scale-110"
+    >
       <div className="w-[99%] mx-auto h-[13rem] mb-4">
-        <img src={image} alt={yogaName} className="w-full h-full rounded-md" />
+        <img
+          src={image}
+          alt={yogaName}
+          className="w-full h-[14rem] rounded-md"
+        />
       </div>
-      <h3 className="text-2xl font-bold">{yogaName}</h3>
+      <h3 className="text-2xl font-bold mt-6 ">{yogaName}</h3>
       <p className="text-base mb-2 font-semibold ">
         Instructor: {instructorName}
       </p>

@@ -5,6 +5,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./Testimonyal.css";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Testimonyal = () => {
   const [users, setUsers] = useState([]);
@@ -15,12 +17,20 @@ const Testimonyal = () => {
       .then((data) => setUsers(data));
   }, []);
 
-  //   console.log("testomini ", users);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   return (
     <>
-      <p className="text-center text-[#6144FF] mt-16 ">TESTIMONY</p>
-      <h1 className="text-4xl font-bold text-[#6144FF] text-center">
+      <p data-aos="fade-up" className="text-center text-[#6144FF] mt-16 ">
+        TESTIMONY
+      </p>
+      <h1
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        className="text-4xl font-bold text-[#6144FF] text-center"
+      >
         Successful Stories
       </h1>
       <Swiper
@@ -41,7 +51,12 @@ const Testimonyal = () => {
       >
         {users.map((user) => (
           <SwiperSlide key={user._id}>
-            <div className="px-4 shadow-lg ">
+            <div
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+              className="px-4 shadow-lg "
+            >
               <p className="py-4">{user.testimonial}</p>
               <div>
                 <img className="rounded-md" src={user.image} alt="" />

@@ -1,10 +1,22 @@
 import logo from "../../../assets/image/WhatsApp Image 2023-06-11 at 7.01.36 PM.jpeg";
 
-// ;
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+// useEffect(() => {
+//   AOS.init({ duration: 1000 });
+// }, []);
+
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div className="bg-[#0F172A]">
-      <footer className="footer py-10 px-10 lg:px-0 mt-12 max-w-6xl mx-auto  text-center text-white">
+      <footer
+        data-aos="fade-down"
+        className="footer py-10 px-10 lg:px-0 mt-12 max-w-6xl mx-auto  text-center text-white"
+      >
         <div>
           <span className="footer-title">Company Name</span>
           <div className="h-[70px] w-[70px] rounded-md flex items-center  ">

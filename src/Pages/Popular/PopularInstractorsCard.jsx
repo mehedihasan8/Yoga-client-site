@@ -1,7 +1,11 @@
 const PopularInstractorsCard = ({ instructor }) => {
   const { name, email, image } = instructor;
   return (
-    <div className="text-center mb-4 bg-white p-4 rounded-lg shadow-md">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="2000"
+      className="text-center mb-4 bg-white p-4 rounded-lg shadow-md"
+    >
       <div className="w-[99%] mx-auto h-[20rem] mb-4 ">
         <img src={image} alt={name} className="w-full rounded-lg h-[20rem] " />
       </div>
