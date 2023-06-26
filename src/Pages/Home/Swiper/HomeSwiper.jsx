@@ -24,7 +24,7 @@ const HomeSwiper = () => {
         delay: 0.6,
       }}
     >
-      <div className="h-[460px] lg:h-[650px] mt-2">
+      <div className="h-[460px] lg:h-[650px] ">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -40,7 +40,7 @@ const HomeSwiper = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="bg-1 h-[600px] flex items-center justify-center text-center text-white border border-red-400">
+            <div className="bg-1 h-[600px] flex items-center justify-center text-center text-white">
               <div>
                 <h4 className=" text-3xl lg:text-5xl px-4 font-extrabold ">
                   Lighting <span className="text-[#6144FF]">Your Heart</span> &

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const Instractor = () => {
   const [instractors, setInstractors] = useState([]);
-  // const [loading , setLoading] = useState(false)
+
   useEffect(() => {
     fetch(`https://summer-camping-server.vercel.app/instractorall`)
       .then((res) => res.json())
